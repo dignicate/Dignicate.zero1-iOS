@@ -14,6 +14,11 @@ final class TopViewModel {
                 case .basic: return 0
                 }
             }
+            var title: String {
+                switch self {
+                case .basic: return "Basic"
+                }
+            }
             var items: [Item] {
                 switch self {
                 case .basic:
@@ -43,4 +48,7 @@ final class TopViewModel {
         ContentStructure.Section.from(section: section)?.items.count ?? 0
     }
 
+    func section(for section: Int) -> ContentStructure.Section? {
+        ContentStructure.Section.from(section: section)
+    }
 }

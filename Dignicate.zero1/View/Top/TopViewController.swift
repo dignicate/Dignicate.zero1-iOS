@@ -28,12 +28,15 @@ extension TopViewController: UITableViewDataSource {
         viewModel.numberOfSections
     }
 
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        viewModel.section(for: section)?.title
+    }
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfItems(section: section)
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        fatalError("tableView(_:cellForRowAt:) has not been implemented")
         UITableViewCell()
     }
 }
