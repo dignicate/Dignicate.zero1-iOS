@@ -1,5 +1,5 @@
 //
-// Created by Xinyiqi on 2021/05/17.
+// Copyright (c) 2021 Dignicate,. All rights reserved.
 //
 
 import Foundation
