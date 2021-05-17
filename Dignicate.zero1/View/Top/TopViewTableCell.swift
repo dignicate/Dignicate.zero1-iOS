@@ -6,6 +6,10 @@ import UIKit
 
 final class TopViewTableCell: UITableViewCell {
 
+    @IBOutlet private weak var numberLabel: UILabel!
+
+    @IBOutlet private weak var titleLabel: UILabel!
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
