@@ -6,10 +6,13 @@ import UIKit
 
 final class TopViewController: UIViewController {
 
-
     @IBOutlet private weak var tableView: UITableView!
 
     private let viewModel = TopViewModel()
+
+    typealias Section = TopViewModel.ContentStructure.Section
+
+    typealias Item = TopViewModel.ContentStructure.Item
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +23,7 @@ final class TopViewController: UIViewController {
         navigationItem.title = "Dignicate.zero1"
 
         tableView.dataSource = self
-        tableView.register(R.nib.topViewTableCell, forCellReuseIdentifier: TopViewModel.ContentStructure.Item.basicFetch.id)
+        tableView.register(R.nib.topViewTableCell, forCellReuseIdentifier: Item.basicFetch.reuseID)
     }
 
 }
@@ -35,10 +38,21 @@ extension TopViewController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfItems(section: section)
+        viewModel.numberOfItems(for: section)
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        guard let section = viewModel.section(for: indexPath.section) else {
+            fatalError()
+        }
+        switch section {
+        case .basic:
+            guard let item = viewModel.item(for: indexPath),
+                  let cell = tableView.dequeueReusableCell(withIdentifier: Item.basicFetch.reuseID, for: indexPath) as? TopViewTableCell else {
+                fatalError()
+            }
+            cell.configure(number: item.itemValue + 1, title: item.title)
+            return cell
+        }
     }
 }

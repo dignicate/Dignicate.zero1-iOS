@@ -22,4 +22,9 @@ final class TopViewTableCell: UITableViewCell {
     private func setupUI() {
         // TODO:
     }
+
+    func configure(number: Int, title: String) {
+        numberLabel.text = "\(number)"
+        titleLabel.text = title
+    }
 }

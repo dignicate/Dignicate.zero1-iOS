@@ -7,9 +7,17 @@ import Foundation
 final class TopViewModel {
 
     enum ContentStructure {
+        static func item(for indexPath: IndexPath) -> Item? {
+            section(for: indexPath.section)?.items.first(where: { $0.itemValue == indexPath.row })
+        }
+
+        static func section(for section: Int) -> Section? {
+            Section.allCases.first(where: { $0.sectionValue == section })
+        }
+
         enum Section: CaseIterable {
             case basic
-            var value: Int {
+            var sectionValue: Int {
                 switch self {
                 case .basic: return 0
                 }
@@ -19,27 +27,29 @@ final class TopViewModel {
                 case .basic: return "Basic"
                 }
             }
-            var items: [Item] {
+            fileprivate var items: [Item] {
                 switch self {
                 case .basic:
                     return [.basicFetch]
                 }
             }
-            static func from(section: Int) -> Section? {
-                allCases.first(where: { $0.value == section })
-            }
         }
 
         enum Item {
             case basicFetch
-            var value: Int {
+            var itemValue: Int {
                 switch self {
                 case .basicFetch: return 0
                 }
             }
-            var id: String {
+            var title: String {
                 switch self {
-                case .basicFetch: return "basicFetch"
+                case .basicFetch: return "Basic API Fetch Pattern"
+                }
+            }
+            var reuseID: String {
+                switch self {
+                case .basicFetch: return "reuse_id_basic_fetch"
                 }
             }
         }
@@ -49,11 +59,15 @@ final class TopViewModel {
         ContentStructure.Section.allCases.count
     }
 
-    func numberOfItems(section: Int) -> Int {
-        ContentStructure.Section.from(section: section)?.items.count ?? 0
+    func numberOfItems(for section: Int) -> Int {
+        ContentStructure.section(for: section)?.items.count ?? 0
     }
 
     func section(for section: Int) -> ContentStructure.Section? {
-        ContentStructure.Section.from(section: section)
+        ContentStructure.section(for: section)
+    }
+
+    func item(for indexPath: IndexPath) -> ContentStructure.Item? {
+        ContentStructure.item(for: indexPath)
     }
 }
