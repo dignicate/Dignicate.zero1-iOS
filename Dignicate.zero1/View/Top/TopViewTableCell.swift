@@ -10,6 +10,8 @@ final class TopViewTableCell: UITableViewCell {
 
     @IBOutlet private weak var titleLabel: UILabel!
 
+    static let reuseID = "reuse_id_top_view_table_cell"
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }

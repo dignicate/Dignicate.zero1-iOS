@@ -8,48 +8,53 @@ final class TopViewModel {
 
     enum ContentStructure {
         static func item(for indexPath: IndexPath) -> Item? {
-            section(for: indexPath.section)?.items.first(where: { $0.itemValue == indexPath.row })
+            section(for: indexPath.section)?.items[indexPath.row]
         }
 
         static func section(for section: Int) -> Section? {
-            Section.allCases.first(where: { $0.sectionValue == section })
+            Section.allCases.first(where: { $0.rawValue == section })
         }
 
-        enum Section: CaseIterable {
-            case basic
-            var sectionValue: Int {
-                switch self {
-                case .basic: return 0
-                }
-            }
+        enum Section: Int, CaseIterable {
+            case basic = 0
+            case tableView = 1
+            case userInput = 2
+//            case swiftUIIntegration = 2
+
             var title: String {
                 switch self {
-                case .basic: return "Basic"
+                case .basic: return "Basic Data Interaction"
+                case .tableView: return "Table View"
+                case .userInput: return "User Input"
                 }
             }
+
             fileprivate var items: [Item] {
                 switch self {
                 case .basic:
-                    return [.basicFetch]
+                    return [.basicFetch, .fetchDataAndSaveCache, .postAndRefresh]
+                case .tableView:
+                    return []
+                case .userInput:
+                    return []
                 }
             }
         }
 
-        enum Item {
-            case basicFetch
-            var itemValue: Int {
-                switch self {
-                case .basicFetch: return 0
-                }
-            }
+        enum Item: Int {
+            case basicFetch = 0
+            case fetchDataAndSaveCache = 1
+            case postAndRefresh = 2
+            case listAndDetail = 3
+            case pagination = 4
+
             var title: String {
                 switch self {
-                case .basicFetch: return "Basic API Fetch Pattern"
-                }
-            }
-            var reuseID: String {
-                switch self {
-                case .basicFetch: return "reuse_id_basic_fetch"
+                case .basicFetch: return "Basic fetch over HTTP"
+                case .fetchDataAndSaveCache: return "Save fetched data into local device"
+                case .postAndRefresh: return "Post data and refresh view"
+                case .listAndDetail: return "List and detail"
+                case .pagination: return "Pagination"
                 }
             }
         }

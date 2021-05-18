@@ -23,7 +23,7 @@ final class TopViewController: UIViewController {
         navigationItem.title = "Dignicate.zero1"
 
         tableView.dataSource = self
-        tableView.register(R.nib.topViewTableCell, forCellReuseIdentifier: Item.basicFetch.reuseID)
+        tableView.register(R.nib.topViewTableCell, forCellReuseIdentifier: TopViewTableCell.reuseID)
     }
 
 }
@@ -48,11 +48,13 @@ extension TopViewController: UITableViewDataSource {
         switch section {
         case .basic:
             guard let item = viewModel.item(for: indexPath),
-                  let cell = tableView.dequeueReusableCell(withIdentifier: Item.basicFetch.reuseID, for: indexPath) as? TopViewTableCell else {
+                  let cell = tableView.dequeueReusableCell(withIdentifier: TopViewTableCell.reuseID, for: indexPath) as? TopViewTableCell else {
                 fatalError()
             }
-            cell.configure(number: item.itemValue + 1, title: item.title)
+            cell.configure(number: item.rawValue + 1, title: item.title)
             return cell
+        case .tableView, .userInput:
+            return UITableViewCell()
         }
     }
 }
