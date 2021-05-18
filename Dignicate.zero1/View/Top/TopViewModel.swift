@@ -37,6 +37,11 @@ final class TopViewModel {
                 case .basicFetch: return 0
                 }
             }
+            var id: String {
+                switch self {
+                case .basicFetch: return "basicFetch"
+                }
+            }
         }
     }
 

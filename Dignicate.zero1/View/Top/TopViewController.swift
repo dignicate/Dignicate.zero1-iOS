@@ -6,6 +6,7 @@ import UIKit
 
 final class TopViewController: UIViewController {
 
+
     @IBOutlet private weak var tableView: UITableView!
 
     private let viewModel = TopViewModel()
@@ -19,6 +20,7 @@ final class TopViewController: UIViewController {
         navigationItem.title = "Dignicate.zero1"
 
         tableView.dataSource = self
+        tableView.register(R.nib.topViewTableCell, forCellReuseIdentifier: TopViewModel.ContentStructure.Item.basicFetch.id)
     }
 
 }
