@@ -23,6 +23,7 @@ final class TopViewController: UIViewController {
         navigationItem.title = "Dignicate.zero1"
 
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(R.nib.topViewTableCell, forCellReuseIdentifier: TopViewTableCell.reuseID)
     }
 
@@ -53,7 +54,17 @@ extension TopViewController: UITableViewDataSource {
 
 extension TopViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard viewModel.item(for: indexPath)?.isAvailable == true else { return }
-
+        guard let item = viewModel.item(for: indexPath),
+              item.isAvailable else {
+            return
+        }
+        switch item {
+        case .basicFetch:
+//            present(FetchAPIViewController(), animated: true)
+            navigationController?.pushViewController(FetchAPIViewController(), animated: true)
+        case .storeInputsOverScreens, .validateAndAutoCorrect, .simpleValidation,
+             .pagination, .listAndDetail, .postAndRefresh, .fetchDataAndSaveCache:
+            break
+        }
     }
 }
