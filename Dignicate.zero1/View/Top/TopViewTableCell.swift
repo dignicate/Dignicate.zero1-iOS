@@ -25,8 +25,11 @@ final class TopViewTableCell: UITableViewCell {
         // TODO:
     }
 
-    func configure(number: Int, title: String) {
+    func configure(number: Int, title: String, isEnabled: Bool) {
         numberLabel.text = "\(number)"
         titleLabel.text = title
+        if isEnabled {
+        } else {
+        }
     }
 }

@@ -63,6 +63,16 @@ final class TopViewModel {
                 case .storeInputsOverScreens: return "Store inputs over screens"
                 }
             }
+
+            var isAvailable: Bool {
+                switch self {
+                case .basicFetch:
+                    return true
+                case .fetchDataAndSaveCache, .postAndRefresh, .listAndDetail, .pagination,
+                     .simpleValidation, .validateAndAutoCorrect, .storeInputsOverScreens:
+                    return false
+                }
+            }
         }
     }
 
