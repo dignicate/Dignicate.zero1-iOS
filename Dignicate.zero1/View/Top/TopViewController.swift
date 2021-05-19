@@ -51,7 +51,7 @@ extension TopViewController: UITableViewDataSource {
                   let cell = tableView.dequeueReusableCell(withIdentifier: TopViewTableCell.reuseID, for: indexPath) as? TopViewTableCell else {
                 fatalError()
             }
-            cell.configure(number: item.rawValue + 1, title: item.title)
+            cell.configure(number: indexPath.row + 1, title: item.title)
             return cell
         case .tableView, .userInput:
             return UITableViewCell()

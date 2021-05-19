@@ -19,7 +19,7 @@ final class TopViewModel {
             case basic = 0
             case tableView = 1
             case userInput = 2
-//            case swiftUIIntegration = 2
+//            case swiftUIIntegration
 
             var title: String {
                 switch self {
@@ -41,12 +41,12 @@ final class TopViewModel {
             }
         }
 
-        enum Item: Int {
-            case basicFetch = 0
-            case fetchDataAndSaveCache = 1
-            case postAndRefresh = 2
-            case listAndDetail = 3
-            case pagination = 4
+        enum Item {
+            case basicFetch
+            case fetchDataAndSaveCache
+            case postAndRefresh
+            case listAndDetail
+            case pagination
 
             var title: String {
                 switch self {
