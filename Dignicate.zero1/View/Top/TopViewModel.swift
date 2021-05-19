@@ -34,9 +34,9 @@ final class TopViewModel {
                 case .basic:
                     return [.basicFetch, .fetchDataAndSaveCache, .postAndRefresh]
                 case .tableView:
-                    return []
+                    return [.listAndDetail, .pagination]
                 case .userInput:
-                    return []
+                    return [.simpleValidation, .validateAndAutoCorrect, .storeInputsOverScreens]
                 }
             }
         }
@@ -47,6 +47,9 @@ final class TopViewModel {
             case postAndRefresh
             case listAndDetail
             case pagination
+            case simpleValidation
+            case validateAndAutoCorrect
+            case storeInputsOverScreens
 
             var title: String {
                 switch self {
@@ -55,6 +58,9 @@ final class TopViewModel {
                 case .postAndRefresh: return "Post data and refresh view"
                 case .listAndDetail: return "List and detail"
                 case .pagination: return "Pagination"
+                case .simpleValidation: return "Simple validation"
+                case .validateAndAutoCorrect: return "Validate and auto-correct"
+                case .storeInputsOverScreens: return "Store inputs over screens"
                 }
             }
         }

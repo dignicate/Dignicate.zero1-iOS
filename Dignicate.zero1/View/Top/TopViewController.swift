@@ -42,19 +42,11 @@ extension TopViewController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let section = viewModel.section(for: indexPath.section) else {
+        guard let item = viewModel.item(for: indexPath),
+              let cell = tableView.dequeueReusableCell(withIdentifier: TopViewTableCell.reuseID, for: indexPath) as? TopViewTableCell else {
             fatalError()
         }
-        switch section {
-        case .basic:
-            guard let item = viewModel.item(for: indexPath),
-                  let cell = tableView.dequeueReusableCell(withIdentifier: TopViewTableCell.reuseID, for: indexPath) as? TopViewTableCell else {
-                fatalError()
-            }
-            cell.configure(number: indexPath.row + 1, title: item.title)
-            return cell
-        case .tableView, .userInput:
-            return UITableViewCell()
-        }
+        cell.configure(number: indexPath.row + 1, title: item.title)
+        return cell
     }
 }
