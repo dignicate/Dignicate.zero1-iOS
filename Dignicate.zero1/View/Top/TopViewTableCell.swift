@@ -17,6 +17,7 @@ final class TopViewTableCell: UITableViewCell {
     }
 
     override func awakeFromNib() {
+        super.awakeFromNib()
         setupUI()
     }
 

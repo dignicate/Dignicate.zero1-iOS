@@ -50,3 +50,10 @@ extension TopViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension TopViewController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard viewModel.item(for: indexPath)?.isAvailable == true else { return }
+
+    }
+}
