@@ -17,6 +17,10 @@ final class TopViewTableCell: UITableViewCell {
     }
 
     override func awakeFromNib() {
+        setupUI()
+    }
+
+    private func setupUI() {
         selectionStyle = .none
     }
 
