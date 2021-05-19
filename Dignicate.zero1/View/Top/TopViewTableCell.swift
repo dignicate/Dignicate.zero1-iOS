@@ -18,18 +18,17 @@ final class TopViewTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         selectionStyle = .none
-        setupUI()
-    }
-
-    private func setupUI() {
-        // TODO:
     }
 
     func configure(number: Int, title: String, isEnabled: Bool) {
         numberLabel.text = "\(number)"
         titleLabel.text = title
         if isEnabled {
+            titleLabel.textColor = R.color.topView.cell.text.enabled
+            backgroundColor = R.color.topView.cell.background.enabled
         } else {
+            titleLabel.textColor = R.color.topView.cell.text.disabled
+            backgroundColor = R.color.topView.cell.background.disabled
         }
     }
 }
