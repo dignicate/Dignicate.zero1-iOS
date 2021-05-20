@@ -60,7 +60,6 @@ extension TopViewController: UITableViewDelegate {
         }
         switch item {
         case .basicFetch:
-//            present(FetchAPIViewController(), animated: true)
             navigationController?.pushViewController(FetchAPIViewController(), animated: true)
         case .storeInputsOverScreens, .validateAndAutoCorrect, .simpleValidation,
              .pagination, .listAndDetail, .postAndRefresh, .fetchDataAndSaveCache:
