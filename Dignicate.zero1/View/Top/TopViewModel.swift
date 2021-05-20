@@ -7,6 +7,8 @@ import RxSwift
 
 final class TopViewModel {
 
+    private let disposeBag = DisposeBag()
+
     enum ContentStructure {
         static func item(for indexPath: IndexPath) -> Item? {
             section(for: indexPath.section)?.items[indexPath.row]
