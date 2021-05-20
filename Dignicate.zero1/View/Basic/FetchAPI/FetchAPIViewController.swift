@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class FetchAPIViewController: UIViewController {
 
@@ -18,6 +19,10 @@ final class FetchAPIViewController: UIViewController {
 
     @IBOutlet private weak var numberOfEmployeesLabel: UILabel!
 
+    private let disposeBag = DisposeBag()
+
+    private let viewModel = TopViewModel()
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,6 +34,7 @@ final class FetchAPIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        viewModel.viewDidLoad(id: 1234)
     }
 
     private func setupUI() {
