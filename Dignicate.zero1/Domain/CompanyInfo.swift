@@ -12,4 +12,8 @@ struct CompanyInfo {
     let foundationDate: String
     let capital: Int
     let numberOfEmployees: Int
+
+    struct ID {
+        let value: Int
+    }
 }

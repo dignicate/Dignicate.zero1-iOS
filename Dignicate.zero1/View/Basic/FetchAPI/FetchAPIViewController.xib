@@ -13,9 +13,9 @@
             <connections>
                 <outlet property="addressLabel" destination="FBw-dF-qNU" id="psi-Uf-qPJ"/>
                 <outlet property="capitalLabel" destination="sm9-ir-16a" id="QcZ-KI-y6S"/>
-                <outlet property="companyNameENLabel" destination="dF1-TP-Wzn" id="som-Os-C6C"/>
+                <outlet property="companyNameENLabel" destination="pEa-4W-8lB" id="Dcb-zr-pKJ"/>
                 <outlet property="companyNameJPLabel" destination="dF1-TP-Wzn" id="bz7-I8-3cC"/>
-                <outlet property="foundationDateLabel" destination="nfz-dW-dd6" id="56P-sE-QBR"/>
+                <outlet property="foundationDateLabel" destination="Zz6-Zv-gLe" id="YbI-4b-5PM"/>
                 <outlet property="numberOfEmployeesLabel" destination="u8t-Is-YK5" id="fbK-4h-IIJ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="LGe-5g-xrP"/>
             </connections>

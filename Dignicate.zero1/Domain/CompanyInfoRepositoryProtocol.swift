@@ -5,5 +5,5 @@
 import RxSwift
 
 protocol CompanyInfoRepositoryProtocol {
-    func fetch()
+    func fetch(id: CompanyInfo.ID) -> Single<CompanyInfo>
 }
