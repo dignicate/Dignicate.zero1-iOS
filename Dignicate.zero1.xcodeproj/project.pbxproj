@@ -18,6 +18,7 @@
 		8C060CC9265004CA00620288 /* Dignicate_zero1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CC8265004CA00620288 /* Dignicate_zero1UITests.swift */; };
 		8C2ED4CF265562B900D3054D /* FetchAPIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2ED4CE265562B900D3054D /* FetchAPIViewController.xib */; };
 		8CD389422653018300D6F869 /* TopViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD389412653018300D6F869 /* TopViewTableCell.xib */; };
+		8CDD7D2426563BDD00F9B503 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CDD7D2326563BDD00F9B503 /* Colors.xcassets */; };
 		E897E942D0C02431FCD08DCF /* TopViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E032FA74925FB5FA3C17 /* TopViewTableCell.swift */; };
 		E897ECB580CEBEF411CC06D6 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E2D62ECBD60B61401F9B /* Resources.swift */; };
 		E897EE7E53C9EA3ED885D30E /* FetchAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897EF4DC8D3A3D80AA5FE9E /* FetchAPIViewController.swift */; };
@@ -58,6 +59,7 @@
 		8C060CCA265004CA00620288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C2ED4CE265562B900D3054D /* FetchAPIViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchAPIViewController.xib; sourceTree = "<group>"; };
 		8CD389412653018300D6F869 /* TopViewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopViewTableCell.xib; sourceTree = "<group>"; };
+		8CDD7D2326563BDD00F9B503 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E897E032FA74925FB5FA3C17 /* TopViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewTableCell.swift; sourceTree = "<group>"; };
 		E897E2D62ECBD60B61401F9B /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		E897EF4DC8D3A3D80AA5FE9E /* FetchAPIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPIViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				8C060CA6265004C900620288 /* AppDelegate.swift */,
 				8C060CA8265004C900620288 /* SceneDelegate.swift */,
 				8C060CAF265004CA00620288 /* Assets.xcassets */,
+				8CDD7D2326563BDD00F9B503 /* Colors.xcassets */,
 				8C060CB1265004CA00620288 /* LaunchScreen.storyboard */,
 				8C060CB4265004CA00620288 /* Info.plist */,
 				E897E2D62ECBD60B61401F9B /* Resources.swift */,
@@ -325,6 +328,7 @@
 				8C060CB3265004CA00620288 /* LaunchScreen.storyboard in Resources */,
 				8C060CB0265004CA00620288 /* Assets.xcassets in Resources */,
 				8C060CAE265004C900620288 /* Main.storyboard in Resources */,
+				8CDD7D2426563BDD00F9B503 /* Colors.xcassets in Resources */,
 				8C2ED4CF265562B900D3054D /* FetchAPIViewController.xib in Resources */,
 				8CD389422653018300D6F869 /* TopViewTableCell.xib in Resources */,
 			);

@@ -6,6 +6,18 @@ import UIKit
 
 final class FetchAPIViewController: UIViewController {
 
+    @IBOutlet private weak var companyNameJPLabel: UILabel!
+
+    @IBOutlet private weak var companyNameENLabel: UILabel!
+
+    @IBOutlet private weak var addressLabel: UILabel!
+
+    @IBOutlet private weak var foundationDateLabel: UILabel!
+
+    @IBOutlet private weak var capitalLabel: UILabel!
+
+    @IBOutlet private weak var numberOfEmployeesLabel: UILabel!
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -20,6 +32,16 @@ final class FetchAPIViewController: UIViewController {
     }
 
     private func setupUI() {
-
+        companyNameJPLabel.text = ""
+        companyNameENLabel.text = ""
+        addressLabel.text = ""
+        foundationDateLabel.text = ""
+        capitalLabel.text = ""
+        numberOfEmployeesLabel.text = ""
     }
+
+    @IBAction private func didTapFetchButton(_ sender: Any) {
+        print("FETCH")
+    }
+
 }
