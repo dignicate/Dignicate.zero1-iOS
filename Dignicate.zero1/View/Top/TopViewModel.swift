@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import RxSwift
 
 final class TopViewModel {
 
