@@ -21,7 +21,7 @@ final class FetchAPIViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
 
-    private let viewModel = TopViewModel()
+    private let viewModel = FetchAPIViewModel()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -34,7 +34,7 @@ final class FetchAPIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel.viewDidLoad(id: 1234)
+        setupBinding()
     }
 
     private func setupUI() {
@@ -46,8 +46,40 @@ final class FetchAPIViewController: UIViewController {
         numberOfEmployeesLabel.text = ""
     }
 
+    private func setupBinding() {
+        viewModel.companyNameJP
+            .asObservable()
+            .bind(to: companyNameJPLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.companyNameEN
+            .asObservable()
+            .bind(to: companyNameENLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.address
+            .asObservable()
+            .bind(to: addressLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.foundationDate
+            .asObservable()
+            .bind(to: foundationDateLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.capital
+            .asObservable()
+            .bind(to: capitalLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.numberOfEmployees
+            .asObservable()
+            .bind(to: numberOfEmployeesLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+
     @IBAction private func didTapFetchButton(_ sender: Any) {
-        print("FETCH")
+        viewModel.didTapFetchButton(id: 1234)
     }
 
 }
