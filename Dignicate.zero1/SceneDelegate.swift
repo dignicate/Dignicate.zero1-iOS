@@ -1,8 +1,5 @@
 //
-//  SceneDelegate.swift
-//  Dignicate.zero1
-//
-//  Created by Xinyiqi on 2021/05/15.
+// Copyright (c) 2021 Dignicate,. All rights reserved.
 //
 
 import UIKit
