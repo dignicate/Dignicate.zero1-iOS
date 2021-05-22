@@ -72,7 +72,7 @@ fileprivate struct MockMethods {
         "令和元年５月２０日"
     }
     static func convertCapitalIntoJapaneseExpression(capital: Int) -> String {
-        "90兆"
+        "90兆円"
     }
     static func convertNumberOfEmployeesIntoJapaneseExpression(number: Int) -> String {
         "\(number) 名"

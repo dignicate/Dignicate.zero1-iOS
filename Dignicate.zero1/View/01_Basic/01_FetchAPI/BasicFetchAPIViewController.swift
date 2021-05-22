@@ -48,33 +48,27 @@ final class BasicFetchAPIViewController: UIViewController {
 
     private func setupBinding() {
         viewModel.companyNameJP
-            .asObservable()
-            .bind(to: companyNameJPLabel.rx.text)
+            .drive(companyNameJPLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.companyNameEN
-            .asObservable()
-            .bind(to: companyNameENLabel.rx.text)
+            .drive(companyNameENLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.address
-            .asObservable()
-            .bind(to: addressLabel.rx.text)
+            .drive(addressLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.foundationDate
-            .asObservable()
-            .bind(to: foundationDateLabel.rx.text)
+            .drive(foundationDateLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.capital
-            .asObservable()
-            .bind(to: capitalLabel.rx.text)
+            .drive(capitalLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.numberOfEmployees
-            .asObservable()
-            .bind(to: numberOfEmployeesLabel.rx.text)
+            .drive(numberOfEmployeesLabel.rx.text)
             .disposed(by: disposeBag)
     }
 
