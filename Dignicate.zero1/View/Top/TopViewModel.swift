@@ -35,7 +35,7 @@ final class TopViewModel {
             fileprivate var items: [Item] {
                 switch self {
                 case .basic:
-                    return [.basicFetch, .fetchDataAndSaveCache, .postAndRefresh]
+                    return [.basicFetch, .fetchWithDataState, .fetchDataAndSaveCache, .postAndRefresh]
                 case .tableView:
                     return [.listAndDetail, .pagination]
                 case .userInput:

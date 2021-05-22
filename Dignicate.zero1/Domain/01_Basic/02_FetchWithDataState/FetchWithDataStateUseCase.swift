@@ -1,5 +1,4 @@
 //
-// Created by Shinichi Watanabe on 2021/05/22.
 // Copyright (c) 2021 Dignicate,. All rights reserved.
 //
 
