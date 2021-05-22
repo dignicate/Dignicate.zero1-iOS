@@ -10,10 +10,13 @@
 		56A14AB3B53A2E07E2CC4FDE /* Pods_Dignicate_zero1_Dignicate_zero1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DD343CC93620A12127F8E6 /* Pods_Dignicate_zero1_Dignicate_zero1UITests.framework */; };
 		6148F3496EC19301BD849245 /* Pods_Dignicate_zero1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7026D913F9453638EF385579 /* Pods_Dignicate_zero1.framework */; };
 		855F51FF903BE57B3A476F4D /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */; };
+		855F52815C5A95A32868CA79 /* FetchWithDataStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */; };
 		855F5418984676741BDF3EBD /* FetchWithDataStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */; };
+		855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */; };
 		855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */; };
 		855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F52470919915DBE44CB22 /* CompanyInfo.swift */; };
 		855F5B7F99ECED87AEE2C873 /* BasicFetchAPIUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */; };
+		855F5BF9A2E3AA93C14273FB /* FetchWithDataStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */; };
 		8C060CA7265004C900620288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CA6265004C900620288 /* AppDelegate.swift */; };
 		8C060CA9265004C900620288 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CA8265004C900620288 /* SceneDelegate.swift */; };
 		8C060CAB265004C900620288 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CAA265004C900620288 /* TopViewController.swift */; };
@@ -61,8 +64,11 @@
 		7C823DF5268C10002526D362 /* Pods_Dignicate_zero1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dignicate_zero1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateUseCase.swift; sourceTree = "<group>"; };
 		855F52470919915DBE44CB22 /* CompanyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
+		855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewController.swift; sourceTree = "<group>"; };
 		855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIUseCase.swift; sourceTree = "<group>"; };
+		855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchWithDataStateViewController.xib; sourceTree = "<group>"; };
 		855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryProtocol.swift; sourceTree = "<group>"; };
+		855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewModel.swift; sourceTree = "<group>"; };
 		855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryMock.swift; sourceTree = "<group>"; };
 		8C060CA3265004C900620288 /* Dignicate.zero1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dignicate.zero1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C060CA6265004C900620288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 		855F5AAA353D41BAF38C15CC /* 102_FetchWithDataState */ = {
 			isa = PBXGroup;
 			children = (
+				855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */,
+				855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */,
+				855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */,
 			);
 			path = 102_FetchWithDataState;
 			sourceTree = "<group>";
@@ -443,6 +452,7 @@
 				8CDD7D2426563BDD00F9B503 /* Colors.xcassets in Resources */,
 				8C2ED4CF265562B900D3054D /* BasicFetchAPIViewController.xib in Resources */,
 				8CD389422653018300D6F869 /* TopViewTableCell.xib in Resources */,
+				855F5BF9A2E3AA93C14273FB /* FetchWithDataStateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +610,8 @@
 				855F51FF903BE57B3A476F4D /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */,
 				855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */,
 				855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */,
+				855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */,
+				855F52815C5A95A32868CA79 /* FetchWithDataStateViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
