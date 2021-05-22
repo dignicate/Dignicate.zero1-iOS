@@ -32,7 +32,47 @@ final class FetchWithDataStateViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        setupBinding()
+    }
+
+    private func setupUI() {
+        companyNameJPLabel.text = ""
+        companyNameENLabel.text = ""
+        addressLabel.text = ""
+        foundationDateLabel.text = ""
+        capitalLabel.text = ""
+        numberOfEmployeesLabel.text = ""
+    }
+
+    private func setupBinding() {
+        viewModel.companyNameJP
+            .drive(companyNameJPLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.companyNameEN
+            .drive(companyNameENLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.address
+            .drive(addressLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.foundationDate
+            .drive(foundationDateLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.capital
+            .drive(capitalLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.numberOfEmployees
+            .drive(numberOfEmployeesLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
     @IBAction private func didTapFetchButton(_ sender: Any) {
-//        viewModel.didTapFetchButton(id: 1234)
+        viewModel.didTapFetchButton(id: 1234)
     }
 }
