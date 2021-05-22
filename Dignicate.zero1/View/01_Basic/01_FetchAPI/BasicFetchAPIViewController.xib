@@ -11,6 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasicFetchAPIViewController" customModule="Dignicate_zero1" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="FBw-dF-qNU" id="THM-qy-1hS"/>
+                <outlet property="capitalLabel" destination="sm9-ir-16a" id="lAO-yh-cjK"/>
+                <outlet property="companyNameENLabel" destination="pEa-4W-8lB" id="eOI-t5-IdR"/>
+                <outlet property="companyNameJPLabel" destination="dF1-TP-Wzn" id="ymD-Oq-dQ7"/>
+                <outlet property="foundationDateLabel" destination="Zz6-Zv-gLe" id="WWB-JV-XId"/>
+                <outlet property="numberOfEmployeesLabel" destination="u8t-Is-YK5" id="HeP-Bj-zJ0"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cZG-6O-sQC"/>
             </connections>
         </placeholder>
@@ -23,6 +29,9 @@
                     <rect key="frame" x="180.5" y="813" width="53" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="FETCH"/>
+                    <connections>
+                        <action selector="didTapFetchButton:" destination="-1" eventType="touchUpInside" id="yIb-Cd-BFA"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="obO-6V-wlr">
                     <rect key="frame" x="20" y="76" width="374" height="290"/>
