@@ -75,5 +75,4 @@ final class BasicFetchAPIViewController: UIViewController {
     @IBAction private func didTapFetchButton(_ sender: Any) {
         viewModel.didTapFetchButton(id: 1234)
     }
-
 }

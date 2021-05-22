@@ -147,8 +147,8 @@
 		855F5AAA353D41BAF38C15CC /* 102_FetchWithDataState */ = {
 			isa = PBXGroup;
 			children = (
-				855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */,
 				855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */,
+				855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */,
 				855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */,
 			);
 			path = 102_FetchWithDataState;

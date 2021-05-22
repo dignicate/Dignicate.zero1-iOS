@@ -9,15 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasicFetchAPIViewController" customModule="Dignicate_zero1" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FetchWithDataStateViewController" customModule="Dignicate_zero1" customModuleProvider="target">
             <connections>
-                <outlet property="addressLabel" destination="FBw-dF-qNU" id="THM-qy-1hS"/>
-                <outlet property="capitalLabel" destination="sm9-ir-16a" id="lAO-yh-cjK"/>
-                <outlet property="companyNameENLabel" destination="pEa-4W-8lB" id="eOI-t5-IdR"/>
-                <outlet property="companyNameJPLabel" destination="dF1-TP-Wzn" id="ymD-Oq-dQ7"/>
-                <outlet property="foundationDateLabel" destination="Zz6-Zv-gLe" id="WWB-JV-XId"/>
-                <outlet property="numberOfEmployeesLabel" destination="u8t-Is-YK5" id="HeP-Bj-zJ0"/>
-                <outlet property="view" destination="iN0-l3-epB" id="cZG-6O-sQC"/>
+                <outlet property="addressLabel" destination="FBw-dF-qNU" id="iUC-Rb-Uet"/>
+                <outlet property="capitalLabel" destination="sm9-ir-16a" id="Mps-aQ-N2J"/>
+                <outlet property="companyNameENLabel" destination="pEa-4W-8lB" id="m8C-qM-bVc"/>
+                <outlet property="companyNameJPLabel" destination="dF1-TP-Wzn" id="2tV-9Q-giH"/>
+                <outlet property="foundationDateLabel" destination="Zz6-Zv-gLe" id="3jt-aL-Uv2"/>
+                <outlet property="numberOfEmployeesLabel" destination="u8t-Is-YK5" id="oMM-Uu-vY6"/>
+                <outlet property="view" destination="iN0-l3-epB" id="JSa-to-hph"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,7 +30,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="FETCH"/>
                     <connections>
-                        <action selector="didTapFetchButton:" destination="-1" eventType="touchUpInside" id="yIb-Cd-BFA"/>
+                        <action selector="didTapFetchButton:" destination="-1" eventType="touchUpInside" id="8B7-aZ-0Hw"/>
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="obO-6V-wlr">
