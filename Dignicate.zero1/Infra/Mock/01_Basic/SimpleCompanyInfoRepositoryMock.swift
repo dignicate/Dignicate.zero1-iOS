@@ -5,7 +5,7 @@
 import RxSwift
 import RxRelay
 
-struct CompanyInfoRepositoryMock: SimpleCompanyInfoRepositoryProtocol {
+struct SimpleCompanyInfoRepositoryMock: SimpleCompanyInfoRepositoryProtocol {
 
     private let delayMs: Double
 

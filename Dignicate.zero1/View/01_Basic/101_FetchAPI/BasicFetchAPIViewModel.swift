@@ -10,7 +10,7 @@ final class BasicFetchAPIViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let useCase = BasicFetchAPIUseCase(repository: CompanyInfoRepositoryMock(delayMs: 2.0))
+    private let useCase = BasicFetchAPIUseCase(repository: SimpleCompanyInfoRepositoryMock(delayMs: 2.0))
 
     var companyNameJP: Driver<String> {
         useCase
