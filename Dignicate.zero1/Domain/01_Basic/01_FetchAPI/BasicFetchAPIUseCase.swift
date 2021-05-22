@@ -5,7 +5,7 @@
 import RxSwift
 import RxRelay
 
-final class FetchAPIUseCase {
+final class BasicFetchAPIUseCase {
 
     private let disposeBag = DisposeBag()
 

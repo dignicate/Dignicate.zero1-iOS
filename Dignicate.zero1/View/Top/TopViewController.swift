@@ -60,7 +60,7 @@ extension TopViewController: UITableViewDelegate {
         }
         switch item {
         case .basicFetch:
-            navigationController?.pushViewController(FetchAPIViewController(), animated: true)
+            navigationController?.pushViewController(BasicFetchAPIViewController(), animated: true)
         case .fetchWithDataState:
             // TODO:
             break

@@ -6,11 +6,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class FetchAPIViewModel {
+final class BasicFetchAPIViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let useCase = FetchAPIUseCase(repository: CompanyInfoRepositoryMock(delayMs: 1.5))
+    private let useCase = BasicFetchAPIUseCase(repository: CompanyInfoRepositoryMock(delayMs: 2.0))
 
     var companyNameJP: Driver<String> {
         useCase

@@ -9,15 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FetchAPIViewController" customModule="Dignicate_zero1" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasicFetchAPIViewController" customModule="Dignicate_zero1" customModuleProvider="target">
             <connections>
-                <outlet property="addressLabel" destination="FBw-dF-qNU" id="psi-Uf-qPJ"/>
-                <outlet property="capitalLabel" destination="sm9-ir-16a" id="QcZ-KI-y6S"/>
-                <outlet property="companyNameENLabel" destination="pEa-4W-8lB" id="Dcb-zr-pKJ"/>
-                <outlet property="companyNameJPLabel" destination="dF1-TP-Wzn" id="bz7-I8-3cC"/>
-                <outlet property="foundationDateLabel" destination="Zz6-Zv-gLe" id="YbI-4b-5PM"/>
-                <outlet property="numberOfEmployeesLabel" destination="u8t-Is-YK5" id="fbK-4h-IIJ"/>
-                <outlet property="view" destination="iN0-l3-epB" id="LGe-5g-xrP"/>
+                <outlet property="view" destination="iN0-l3-epB" id="cZG-6O-sQC"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,9 +23,6 @@
                     <rect key="frame" x="180.5" y="813" width="53" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="FETCH"/>
-                    <connections>
-                        <action selector="didTapFetchButton:" destination="-1" eventType="touchUpInside" id="mGm-yB-q3z"/>
-                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="obO-6V-wlr">
                     <rect key="frame" x="20" y="76" width="374" height="290"/>
