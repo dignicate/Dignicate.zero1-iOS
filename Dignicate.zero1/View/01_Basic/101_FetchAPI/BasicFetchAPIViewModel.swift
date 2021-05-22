@@ -6,11 +6,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class FetchAPIViewModel {
+final class BasicFetchAPIViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let useCase = FetchAPIUseCase(repository: CompanyInfoRepositoryMock(delayMs: 1.5))
+    private let useCase = BasicFetchAPIUseCase(repository: SimpleCompanyInfoRepositoryMock(delayMs: 2.0))
 
     var companyNameJP: Driver<String> {
         useCase
@@ -72,7 +72,7 @@ fileprivate struct MockMethods {
         "令和元年５月２０日"
     }
     static func convertCapitalIntoJapaneseExpression(capital: Int) -> String {
-        "90兆"
+        "90兆円"
     }
     static func convertNumberOfEmployeesIntoJapaneseExpression(number: Int) -> String {
         "\(number) 名"

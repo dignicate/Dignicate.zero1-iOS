@@ -35,7 +35,7 @@ final class TopViewModel {
             fileprivate var items: [Item] {
                 switch self {
                 case .basic:
-                    return [.basicFetch, .fetchDataAndSaveCache, .postAndRefresh]
+                    return [.basicFetch, .fetchWithDataState, .fetchDataAndSaveCache, .postAndRefresh]
                 case .tableView:
                     return [.listAndDetail, .pagination]
                 case .userInput:
@@ -46,6 +46,7 @@ final class TopViewModel {
 
         enum Item {
             case basicFetch
+            case fetchWithDataState
             case fetchDataAndSaveCache
             case postAndRefresh
             case listAndDetail
@@ -57,6 +58,7 @@ final class TopViewModel {
             var title: String {
                 switch self {
                 case .basicFetch: return "Basic fetch over HTTP"
+                case .fetchWithDataState: return "Fetch with data state"
                 case .fetchDataAndSaveCache: return "Save fetched data into local device"
                 case .postAndRefresh: return "Post data and refresh view"
                 case .listAndDetail: return "List and detail"
@@ -69,7 +71,7 @@ final class TopViewModel {
 
             var isAvailable: Bool {
                 switch self {
-                case .basicFetch:
+                case .basicFetch, .fetchWithDataState:
                     return true
                 case .fetchDataAndSaveCache, .postAndRefresh, .listAndDetail, .pagination,
                      .simpleValidation, .validateAndAutoCorrect, .storeInputsOverScreens:

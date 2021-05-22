@@ -4,8 +4,9 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
-final class FetchAPIViewController: UIViewController {
+final class FetchWithDataStateViewController: UIViewController {
 
     @IBOutlet private weak var companyNameJPLabel: UILabel!
 
@@ -19,9 +20,11 @@ final class FetchAPIViewController: UIViewController {
 
     @IBOutlet private weak var numberOfEmployeesLabel: UILabel!
 
+    @IBOutlet private weak var fetchingIndicator: UIActivityIndicatorView!
+
     private let disposeBag = DisposeBag()
 
-    private let viewModel = FetchAPIViewModel()
+    private let viewModel = FetchWithDataStateViewModel()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -44,42 +47,40 @@ final class FetchAPIViewController: UIViewController {
         foundationDateLabel.text = ""
         capitalLabel.text = ""
         numberOfEmployeesLabel.text = ""
+        fetchingIndicator.startAnimating()
+        fetchingIndicator.isHidden = true
     }
 
     private func setupBinding() {
         viewModel.companyNameJP
-            .asObservable()
-            .bind(to: companyNameJPLabel.rx.text)
+            .drive(companyNameJPLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.companyNameEN
-            .asObservable()
-            .bind(to: companyNameENLabel.rx.text)
+            .drive(companyNameENLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.address
-            .asObservable()
-            .bind(to: addressLabel.rx.text)
+            .drive(addressLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.foundationDate
-            .asObservable()
-            .bind(to: foundationDateLabel.rx.text)
+            .drive(foundationDateLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.capital
-            .asObservable()
-            .bind(to: capitalLabel.rx.text)
+            .drive(capitalLabel.rx.text)
             .disposed(by: disposeBag)
 
         viewModel.numberOfEmployees
-            .asObservable()
-            .bind(to: numberOfEmployeesLabel.rx.text)
+            .drive(numberOfEmployeesLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.shouldHideWaitingCircle
+            .drive(fetchingIndicator.rx.isHidden)
             .disposed(by: disposeBag)
     }
-
     @IBAction private func didTapFetchButton(_ sender: Any) {
         viewModel.didTapFetchButton(id: 1234)
     }
-
 }
