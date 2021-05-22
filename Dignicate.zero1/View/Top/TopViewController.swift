@@ -61,6 +61,9 @@ extension TopViewController: UITableViewDelegate {
         switch item {
         case .basicFetch:
             navigationController?.pushViewController(FetchAPIViewController(), animated: true)
+        case .fetchWithDataState:
+            // TODO:
+            break
         case .storeInputsOverScreens, .validateAndAutoCorrect, .simpleValidation,
              .pagination, .listAndDetail, .postAndRefresh, .fetchDataAndSaveCache:
             // TODO:

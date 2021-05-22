@@ -17,7 +17,7 @@ final class FetchAPIUseCase {
         companyInfoRelay.asObservable()
     }
 
-    init(repository: CompanyInfoRepositoryProtocol) {
+    init(repository: SimpleCompanyInfoRepositoryProtocol) {
         fetchTrigger
             .flatMapLatest { id in
                 repository.fetch(id: id)
