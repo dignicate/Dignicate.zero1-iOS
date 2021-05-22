@@ -20,6 +20,8 @@ final class FetchWithDataStateViewController: UIViewController {
 
     @IBOutlet private weak var numberOfEmployeesLabel: UILabel!
 
+    @IBOutlet private weak var fetchingIndicator: UIActivityIndicatorView!
+
     private let disposeBag = DisposeBag()
 
     private let viewModel = FetchWithDataStateViewModel()
@@ -45,6 +47,8 @@ final class FetchWithDataStateViewController: UIViewController {
         foundationDateLabel.text = ""
         capitalLabel.text = ""
         numberOfEmployeesLabel.text = ""
+        fetchingIndicator.startAnimating()
+        fetchingIndicator.isHidden = true
     }
 
     private func setupBinding() {
@@ -70,6 +74,10 @@ final class FetchWithDataStateViewController: UIViewController {
 
         viewModel.numberOfEmployees
             .drive(numberOfEmployeesLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.shouldHideWaitingCircle
+            .drive(fetchingIndicator.rx.isHidden)
             .disposed(by: disposeBag)
     }
     @IBAction private func didTapFetchButton(_ sender: Any) {

@@ -15,6 +15,7 @@
                 <outlet property="capitalLabel" destination="sm9-ir-16a" id="Mps-aQ-N2J"/>
                 <outlet property="companyNameENLabel" destination="pEa-4W-8lB" id="m8C-qM-bVc"/>
                 <outlet property="companyNameJPLabel" destination="dF1-TP-Wzn" id="2tV-9Q-giH"/>
+                <outlet property="fetchingIndicator" destination="wab-Ss-0O2" id="pRz-o8-lHn"/>
                 <outlet property="foundationDateLabel" destination="Zz6-Zv-gLe" id="3jt-aL-Uv2"/>
                 <outlet property="numberOfEmployeesLabel" destination="u8t-Is-YK5" id="oMM-Uu-vY6"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JSa-to-hph"/>
@@ -239,15 +240,24 @@
                         <constraint firstItem="cY3-8v-pnS" firstAttribute="leading" secondItem="obO-6V-wlr" secondAttribute="leading" id="ouB-J1-BtG"/>
                     </constraints>
                 </stackView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wab-Ss-0O2">
+                    <rect key="frame" x="197" y="785" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="2zU-kj-fbu"/>
+                        <constraint firstAttribute="width" constant="20" id="zMc-63-h3S"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="wab-Ss-0O2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FDK-hG-xxY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="obO-6V-wlr" secondAttribute="trailing" constant="20" id="FN4-Rg-VPt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hyd-Ls-xSA" secondAttribute="bottom" constant="16" id="KbC-45-abM"/>
                 <constraint firstItem="obO-6V-wlr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="Q29-23-84s"/>
                 <constraint firstItem="obO-6V-wlr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="RTx-vF-AOT"/>
                 <constraint firstItem="Hyd-Ls-xSA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YAD-Os-R8h"/>
+                <constraint firstItem="Hyd-Ls-xSA" firstAttribute="top" secondItem="wab-Ss-0O2" secondAttribute="bottom" constant="8" symbolic="YES" id="kEb-rP-Eu0"/>
             </constraints>
             <point key="canvasLocation" x="95.652173913043484" y="71.651785714285708"/>
         </view>
