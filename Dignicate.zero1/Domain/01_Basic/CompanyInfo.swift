@@ -8,8 +8,8 @@ struct CompanyInfo {
     let nameJP: String
     let nameEN: String
     let address: String
-    let foundationDate: String
-    let capital: Int
+    let foundationDate: BasicFetchMockDomain.YMD
+    let capital: BasicFetchMockDomain.Currency
     let numberOfEmployees: Int
 
     struct ID {

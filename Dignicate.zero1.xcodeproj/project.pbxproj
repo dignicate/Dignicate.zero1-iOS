@@ -29,6 +29,7 @@
 		8CD389422653018300D6F869 /* TopViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD389412653018300D6F869 /* TopViewTableCell.xib */; };
 		8CDD7D2426563BDD00F9B503 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CDD7D2326563BDD00F9B503 /* Colors.xcassets */; };
 		DBF1486429FED1EC6FEA82B2 /* Pods_Dignicate_zero1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C823DF5268C10002526D362 /* Pods_Dignicate_zero1Tests.framework */; };
+		E897E054B73B470452303D42 /* BasicFetchMockDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897EC9DEB0A81C2038818EF /* BasicFetchMockDomain.swift */; };
 		E897E6F8CCC97C43CBF67C90 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897EE3D03DFB2D578AA4133 /* TopViewModel.swift */; };
 		E897E79F94384F67658D9AB4 /* BasicFetchAPIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E082BAEF78C0FFF17706 /* BasicFetchAPIViewModel.swift */; };
 		E897E942D0C02431FCD08DCF /* TopViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E032FA74925FB5FA3C17 /* TopViewTableCell.swift */; };
@@ -91,6 +92,7 @@
 		E897E032FA74925FB5FA3C17 /* TopViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewTableCell.swift; sourceTree = "<group>"; };
 		E897E082BAEF78C0FFF17706 /* BasicFetchAPIViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIViewModel.swift; sourceTree = "<group>"; };
 		E897E2D62ECBD60B61401F9B /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		E897EC9DEB0A81C2038818EF /* BasicFetchMockDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchMockDomain.swift; sourceTree = "<group>"; };
 		E897EE3D03DFB2D578AA4133 /* TopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		E897EF4DC8D3A3D80AA5FE9E /* BasicFetchAPIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +142,7 @@
 				855F5E29719D8319359F5D53 /* 102_FetchWithDataState */,
 				855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */,
 				855F52470919915DBE44CB22 /* CompanyInfo.swift */,
+				E897EC9DEB0A81C2038818EF /* BasicFetchMockDomain.swift */,
 			);
 			path = 01_Basic;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */,
 				855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */,
 				855F52815C5A95A32868CA79 /* FetchWithDataStateViewModel.swift in Sources */,
+				E897E054B73B470452303D42 /* BasicFetchMockDomain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,7 +37,7 @@ final class BasicFetchAPIViewModel {
         useCase
             .companyInfo
             .map(\.foundationDate)
-            .compactMap { MockMethods.convertDateIntoJavaneseExpression(date: $0) }
+            .compactMap { $0.localizedExpression }
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -45,7 +45,7 @@ final class BasicFetchAPIViewModel {
         useCase
             .companyInfo
             .map(\.capital)
-            .compactMap { MockMethods.convertCapitalIntoJapaneseExpression(capital: $0) }
+            .compactMap { $0.localizedExpression }
             .asDriver(onErrorDriveWith: .empty())
     }
 
