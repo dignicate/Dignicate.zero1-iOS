@@ -20,8 +20,8 @@ struct SimpleCompanyInfoRepositoryMock: SimpleCompanyInfoRepositoryProtocol {
                     nameJP: "ディグニケート合同会社",
                     nameEN: "Dignicate, LLC",
                     address: "東京都新宿区西新宿３−１−５新宿嘉泉ビル８F",
-                    foundationDate: "2019/05/20",
-                    capital: 90000000000000,
+                    foundationDate: .init(year: 2019, month: 5, day: 20),
+                    capital: .jpy(amount: 90000000000000),
                     numberOfEmployees: 29018
                 )
                 observer(.success(data))
