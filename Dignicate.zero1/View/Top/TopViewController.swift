@@ -64,7 +64,7 @@ extension TopViewController: UITableViewDelegate {
         case .fetchWithDataState:
             navigationController?.pushViewController(FetchWithDataStateViewController(), animated: true)
         case .storeInputsOverScreens, .validateAndAutoCorrect, .simpleValidation,
-             .pagination, .listAndDetail, .postAndRefresh, .fetchDataAndSaveCache:
+             .pagination, .listAndDetail, .postAndRefresh, .fetchDataAndSave:
             // TODO:
             break
         }

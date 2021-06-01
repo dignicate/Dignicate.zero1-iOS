@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		56A14AB3B53A2E07E2CC4FDE /* Pods_Dignicate_zero1_Dignicate_zero1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DD343CC93620A12127F8E6 /* Pods_Dignicate_zero1_Dignicate_zero1UITests.framework */; };
 		6148F3496EC19301BD849245 /* Pods_Dignicate_zero1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7026D913F9453638EF385579 /* Pods_Dignicate_zero1.framework */; };
-		855F51FF903BE57B3A476F4D /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */; };
+		855F51C69772B1C173921698 /* FetchAndSaveDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */; };
 		855F52815C5A95A32868CA79 /* FetchWithDataStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */; };
+		855F5369ACEAF3CD77D2C760 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */; };
 		855F5418984676741BDF3EBD /* FetchWithDataStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */; };
 		855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */; };
 		855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */; };
 		855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F52470919915DBE44CB22 /* CompanyInfo.swift */; };
+		855F5AA9C990E65442556757 /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */; };
 		855F5B7F99ECED87AEE2C873 /* BasicFetchAPIUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */; };
 		855F5BF9A2E3AA93C14273FB /* FetchWithDataStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */; };
 		8C060CA7265004C900620288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CA6265004C900620288 /* AppDelegate.swift */; };
@@ -65,10 +67,12 @@
 		7C823DF5268C10002526D362 /* Pods_Dignicate_zero1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dignicate_zero1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateUseCase.swift; sourceTree = "<group>"; };
 		855F52470919915DBE44CB22 /* CompanyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
+		855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryProtocol.swift; sourceTree = "<group>"; };
+		855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetchAndSaveRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewController.swift; sourceTree = "<group>"; };
+		855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataUseCase.swift; sourceTree = "<group>"; };
 		855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIUseCase.swift; sourceTree = "<group>"; };
 		855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchWithDataStateViewController.xib; sourceTree = "<group>"; };
-		855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewModel.swift; sourceTree = "<group>"; };
 		855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryMock.swift; sourceTree = "<group>"; };
 		8C060CA3265004C900620288 /* Dignicate.zero1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dignicate.zero1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,11 +144,20 @@
 			children = (
 				855F5E20BA7A131776D974E8 /* 101_FetchAPI */,
 				855F5E29719D8319359F5D53 /* 102_FetchWithDataState */,
-				855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */,
 				855F52470919915DBE44CB22 /* CompanyInfo.swift */,
 				E897EC9DEB0A81C2038818EF /* BasicFetchMockDomain.swift */,
+				855F53EB3C440404DA0CBB8F /* 103_FetchAndSaveData */,
 			);
 			path = 01_Basic;
+			sourceTree = "<group>";
+		};
+		855F53EB3C440404DA0CBB8F /* 103_FetchAndSaveData */ = {
+			isa = PBXGroup;
+			children = (
+				855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */,
+				855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */,
+			);
+			path = 103_FetchAndSaveData;
 			sourceTree = "<group>";
 		};
 		855F5AAA353D41BAF38C15CC /* 102_FetchWithDataState */ = {
@@ -169,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */,
+				855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */,
 			);
 			path = 101_FetchAPI;
 			sourceTree = "<group>";
@@ -610,12 +624,14 @@
 				E897E79F94384F67658D9AB4 /* BasicFetchAPIViewModel.swift in Sources */,
 				855F5B7F99ECED87AEE2C873 /* BasicFetchAPIUseCase.swift in Sources */,
 				855F5418984676741BDF3EBD /* FetchWithDataStateUseCase.swift in Sources */,
-				855F51FF903BE57B3A476F4D /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */,
 				855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */,
 				855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */,
 				855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */,
 				855F52815C5A95A32868CA79 /* FetchWithDataStateViewModel.swift in Sources */,
 				E897E054B73B470452303D42 /* BasicFetchMockDomain.swift in Sources */,
+				855F5369ACEAF3CD77D2C760 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift in Sources */,
+				855F5AA9C990E65442556757 /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */,
+				855F51C69772B1C173921698 /* FetchAndSaveDataUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
