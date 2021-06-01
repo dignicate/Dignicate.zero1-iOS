@@ -41,14 +41,7 @@ final class FetchWithDataStateViewController: UIViewController {
     }
 
     private func setupUI() {
-        companyNameJPLabel.text = ""
-        companyNameENLabel.text = ""
-        addressLabel.text = ""
-        foundationDateLabel.text = ""
-        capitalLabel.text = ""
-        numberOfEmployeesLabel.text = ""
         fetchingIndicator.startAnimating()
-        fetchingIndicator.isHidden = true
     }
 
     private func setupBinding() {
