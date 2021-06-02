@@ -11,7 +11,7 @@ final class FetchAndSaveDataUseCase {
 
     private let fetchTrigger = PublishRelay<CompanyInfo.ID>()
 
-    private let saveTrigger = PublishRelay<CompanyInfo>()
+    private let saveTrigger = PublishRelay<(CompanyInfo.ID, CompanyInfo)>()
 
     private let saveCompleteRelay = PublishRelay<Void>()
 
@@ -24,7 +24,9 @@ final class FetchAndSaveDataUseCase {
     init(repository: CompanyInfoFetchAndSaveRepositoryProtocol) {
         fetchTrigger
             .flatMapLatest { id in
-                repository.fetch(id: id)
+                repository
+                    .fetch(id: id)
+                    .map { (id, $0) }
             }
             .bind(to: saveTrigger)
             .disposed(by: disposeBag)
@@ -37,8 +39,8 @@ final class FetchAndSaveDataUseCase {
             .disposed(by: disposeBag)
 
         saveTrigger
-            .flatMapLatest { companyInfo in
-                repository.save(companyInfo: companyInfo)
+            .flatMapLatest { id, companyInfo in
+                repository.save(id: id, companyInfo: companyInfo)
             }
             .bind(to: saveCompleteRelay)
             .disposed(by: disposeBag)

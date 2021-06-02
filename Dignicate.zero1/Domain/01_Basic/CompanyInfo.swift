@@ -12,7 +12,7 @@ struct CompanyInfo {
     let capital: BasicFetchMockDomain.Currency
     let numberOfEmployees: Int
 
-    struct ID {
+    struct ID: Hashable {
         let value: Int
     }
 }
