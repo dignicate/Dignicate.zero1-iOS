@@ -32,11 +32,21 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
         }
     }
 
-    func save(id: CompanyInfo.ID, companyInfo: CompanyInfo) -> Single<()> {
-        Single.just(memoryCache.save(id: id, companyInfo: companyInfo))
+    func save(id: CompanyInfo.ID, companyInfo: CompanyInfo) -> Single<Void> {
+        Single.create { observer in
+            UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: UserDefaultKey.companyInfoLastUpdate)
+            observer(.success(
+                memoryCache.save(id: id, companyInfo: companyInfo)
+            ))
+            return Disposables.create()
+        }
     }
 
-    func hasSaveData() -> Single<Bool> {
-        fatalError("hasSaveData() has not been implemented")
+    func fetchLastUpdated() -> Single<Date> {
+        Single.create { observer in
+            let value = UserDefaults.standard.double(forKey: UserDefaultKey.companyInfoLastUpdate)
+            observer(.success(Date(timeIntervalSince1970: value)))
+            return Disposables.create()
+        }
     }
 }

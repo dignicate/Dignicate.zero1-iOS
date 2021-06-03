@@ -8,5 +8,5 @@ import RxRelay
 protocol CompanyInfoFetchAndSaveRepositoryProtocol {
     func fetch(id: CompanyInfo.ID) -> Single<CompanyInfo>
     func save(id: CompanyInfo.ID, companyInfo: CompanyInfo) -> Single<Void>
-    func hasSaveData() -> Single<Bool>
+    func fetchLastUpdated() -> Single<Date>
 }
