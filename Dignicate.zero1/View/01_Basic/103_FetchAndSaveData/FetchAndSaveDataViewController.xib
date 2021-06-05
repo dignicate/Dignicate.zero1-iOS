@@ -141,11 +141,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="np8-Si-AP9">
                             <rect key="frame" x="0.0" y="210" width="374" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="undefined" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzN-tS-HRI">
-                                    <rect key="frame" x="0.0" y="12" width="140" height="16"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="140" id="zIY-HY-k5a"/>
-                                    </constraints>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="undefined" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzN-tS-HRI">
+                                    <rect key="frame" x="0.0" y="12" width="79" height="16"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <color key="textColor" name="top_view_cell_text_enabled"/>
                                     <nil key="highlightedColor"/>
@@ -153,6 +150,7 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jzN-tS-HRI" secondAttribute="trailing" id="1PD-mc-nSo"/>
                                 <constraint firstAttribute="height" constant="40" id="9yh-x7-c08"/>
                                 <constraint firstItem="jzN-tS-HRI" firstAttribute="top" secondItem="np8-Si-AP9" secondAttribute="top" constant="12" id="PUV-AX-q0D"/>
                                 <constraint firstAttribute="bottom" secondItem="jzN-tS-HRI" secondAttribute="bottom" constant="12" id="j01-41-aIi"/>
