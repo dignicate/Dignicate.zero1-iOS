@@ -15,7 +15,7 @@ final class FetchAndSaveDataUseCase {
 
     private let saveCompleteRelay = PublishRelay<Void>()
 
-    private let hasSaveDataRelay = PublishRelay<Bool>()
+    private let lastUpdatedRelay = PublishRelay<String>()
 
     var saveComplete: Observable<Void> {
         saveCompleteRelay.asObservable()
@@ -33,9 +33,10 @@ final class FetchAndSaveDataUseCase {
 
         fetchTrigger
             .flatMapLatest { _ in
-                repository.hasSaveData()
+                repository.fetchLastUpdated()
+                    .map { "\($0)" }
             }
-            .bind(to: hasSaveDataRelay)
+            .bind(to: lastUpdatedRelay)
             .disposed(by: disposeBag)
 
         saveTrigger
