@@ -21,14 +21,16 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
         self.delayMs = delayMs
     }
 
-    func fetch(id: CompanyInfo.ID) -> Single<CompanyInfo> {
+    func fetch(id: CompanyInfo.ID) -> Single<FetchAndSaveDataUseCase.DataSource> {
         if memoryCache.hasMemoryCache(id: id),
            let data = memoryCache.fetch(id: id) {
-            return Single.just(data)
+            return Single.just(.local(companyInfo: data))
         } else {
             // WARNING: This is NOT an appropriate way I presume.
             // I did like below because it is mare a MOCK.
-            return SimpleCompanyInfoRepositoryMock(delayMs: delayMs).fetch(id: id)
+            return SimpleCompanyInfoRepositoryMock(delayMs: delayMs)
+                .fetch(id: id)
+                .map { .remote(companyInfo: $0) }
         }
     }
 
