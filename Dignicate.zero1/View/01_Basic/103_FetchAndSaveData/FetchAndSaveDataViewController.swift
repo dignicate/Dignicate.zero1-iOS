@@ -58,7 +58,12 @@ final class FetchAndSaveDataViewController: UIViewController {
             .drive(onNext: { [weak self] in
                 self?.companyNameJPLabel.text = ""
                 self?.companyNameENLabel.text = ""
+                self?.dataSourceLabel.text = ""
             })
+            .disposed(by: disposeBag)
+
+        viewModel.dataSourceName
+            .drive(dataSourceLabel.rx.text)
             .disposed(by: disposeBag)
     }
 

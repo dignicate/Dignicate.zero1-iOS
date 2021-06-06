@@ -14,26 +14,39 @@ final class FetchAndSaveDataViewModel {
 
     var companyNameJP: Driver<String> {
         useCase
-            .companyInfo
-            .map(\.nameJP)
+            .dataSource
+            .map { $0.data.nameJP }
             .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
     var companyNameEN: Driver<String> {
         useCase
-            .companyInfo
-            .map(\.nameEN)
+            .dataSource
+            .map { $0.data.nameEN }
             .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
     var lastUpdated: Driver<String> {
         Observable.combineLatest(
-                useCase.companyInfo,
+                useCase.dataSource,
                 useCase.lastUpdated)
             .map { _, lastUpdated in
                 lastUpdated ?? ""
+            }
+            .startWith("")
+            .distinctUntilChanged()
+            .asDriver(onErrorDriveWith: .empty())
+    }
+
+    var dataSourceName: Driver<String> {
+        useCase.dataSource
+            .map {
+                switch $0 {
+                case .remote: return "リモート（モック）"
+                case .local: return "ローカル保存"
+                }
             }
             .startWith("")
             .distinctUntilChanged()

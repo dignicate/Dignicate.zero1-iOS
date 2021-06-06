@@ -25,13 +25,9 @@ final class FetchAndSaveDataUseCase {
 
     private let lastUpdatedRelay = PublishRelay<String?>()
 
-    var companyInfo: Observable<CompanyInfo> {
-        companyInfoRelay.compactMap {
-            switch $0 {
-            case .remote(let data): return data
-            case .local(let data): return data
-            }
-        }
+    var dataSource: Observable<DataSource> {
+        companyInfoRelay
+            .asObservable()
     }
 
     var saveComplete: Observable<Void> {
@@ -49,6 +45,13 @@ final class FetchAndSaveDataUseCase {
     enum DataSource {
         case remote(companyInfo: CompanyInfo)
         case local(companyInfo: CompanyInfo)
+
+        var data: CompanyInfo {
+            switch self {
+            case .remote(let data): return data
+            case .local(let data): return data
+            }
+        }
     }
 
     init(repository: CompanyInfoFetchAndSaveRepositoryProtocol) {
@@ -82,7 +85,7 @@ final class FetchAndSaveDataUseCase {
 
         saveTrigger
             .flatMapLatest {
-                repository.save(companyInfo: $0)
+                repository.saveToLocal(companyInfo: $0)
             }
             .bind(to: saveCompleteRelay)
             .disposed(by: disposeBag)
@@ -107,9 +110,14 @@ final class FetchAndSaveDataUseCase {
 
         clearLocalDataTrigger
             .flatMapLatest {
-                repository.clear()
+                repository.clearLocalData()
             }
             .bind(to: clearCompleteRelay)
+            .disposed(by: disposeBag)
+
+        clearCompleteRelay
+            .map { nil }
+            .bind(to: lastUpdatedRelay)
             .disposed(by: disposeBag)
     }
 

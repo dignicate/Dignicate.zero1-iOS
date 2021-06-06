@@ -44,7 +44,7 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
         }
     }
 
-    func clear() -> Single<()> {
+    func clearLocalData() -> Single<()> {
         Single.create { observer in
             UserDefaults.standard.removeObject(forKey: UserDefaultKey.companyInfoLastUpdate)
             memoryCache.clear()
@@ -55,7 +55,7 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
         }
     }
 
-    func save(companyInfo: CompanyInfo) -> Single<Void> {
+    func saveToLocal(companyInfo: CompanyInfo) -> Single<Void> {
         Single.create { observer in
             UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: UserDefaultKey.companyInfoLastUpdate)
             memoryCache.save(companyInfo: companyInfo)
