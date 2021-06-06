@@ -10,7 +10,7 @@ final class FetchAndSaveDataViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let useCase = FetchAndSaveDataUseCase(repository: CompanyInfoFetchAndSaveRepositoryMock(delaySec: 1.8))
+    private let useCase = FetchAndSaveDataUseCase(repository: CompanyInfoFetchAndSaveRepositoryMock(delaySec: 0.2))
 
     var companyNameJP: Driver<String> {
         useCase
@@ -31,16 +31,32 @@ final class FetchAndSaveDataViewModel {
     var lastUpdated: Driver<String> {
         Observable.combineLatest(
                 useCase.companyInfo,
-                useCase.lastUpdated.startWith(""))
+                useCase.lastUpdated)
             .map { _, lastUpdated in
-                lastUpdated
+                lastUpdated ?? ""
             }
             .startWith("")
             .distinctUntilChanged()
             .asDriver(onErrorDriveWith: .empty())
     }
 
+    var shouldEnableClearButton: Driver<Bool> {
+        useCase.lastUpdated
+            .map { $0 != nil }
+            .startWith(false)
+            .distinctUntilChanged()
+            .asDriver(onErrorDriveWith: .empty())
+    }
+
+    var shouldClearAllData: Driver<Void> {
+        useCase.clearComplete.asDriver(onErrorDriveWith: .empty())
+    }
+
     func didTapFetchButton(id: Int) {
         useCase.fetch(id: CompanyInfo.ID(value: id))
+    }
+
+    func didTapClearButton() {
+        useCase.clear()
     }
 }

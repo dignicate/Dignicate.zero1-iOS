@@ -44,6 +44,17 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
         }
     }
 
+    func clear() -> Single<()> {
+        Single.create { observer in
+            UserDefaults.standard.removeObject(forKey: UserDefaultKey.companyInfoLastUpdate)
+            memoryCache.clear()
+            DispatchQueue.main.asyncAfter(deadline: .now() + (delaySec * 2.5)) {
+                observer(.success(()))
+            }
+            return Disposables.create()
+        }
+    }
+
     func save(companyInfo: CompanyInfo) -> Single<Void> {
         Single.create { observer in
             UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: UserDefaultKey.companyInfoLastUpdate)

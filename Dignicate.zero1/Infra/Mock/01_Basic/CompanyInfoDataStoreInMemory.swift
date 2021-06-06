@@ -23,4 +23,8 @@ final class CompanyInfoMemoryCacheDataStore {
     func save(companyInfo: CompanyInfo) -> Void {
         memoryCache[companyInfo.id] = companyInfo
     }
+
+    func clear() -> Void {
+        memoryCache.removeAll()
+    }
 }

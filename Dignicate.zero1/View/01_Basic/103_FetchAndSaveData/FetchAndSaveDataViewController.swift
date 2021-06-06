@@ -20,6 +20,10 @@ final class FetchAndSaveDataViewController: UIViewController {
 
     @IBOutlet private weak var lastUpdatedLabel: UILabel!
 
+    @IBOutlet private weak var clearButton: UIButton!
+
+    @IBOutlet private weak var fetchButton: UIButton!
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,6 +49,17 @@ final class FetchAndSaveDataViewController: UIViewController {
         viewModel.lastUpdated
             .drive(lastUpdatedLabel.rx.text)
             .disposed(by: disposeBag)
+
+        viewModel.shouldEnableClearButton
+            .drive(clearButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        viewModel.shouldClearAllData
+            .drive(onNext: { [weak self] in
+                self?.companyNameJPLabel.text = ""
+                self?.companyNameENLabel.text = ""
+            })
+            .disposed(by: disposeBag)
     }
 
     @IBAction private func didTapFetchButton(_ sender: Any) {
@@ -52,6 +67,6 @@ final class FetchAndSaveDataViewController: UIViewController {
     }
 
     @IBAction private func didTapClearButton(_ sender: Any) {
-        
+        viewModel.didTapClearButton()
     }
 }

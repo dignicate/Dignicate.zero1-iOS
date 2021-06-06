@@ -15,14 +15,18 @@ final class FetchAndSaveDataUseCase {
 
     private let saveTrigger = PublishRelay<CompanyInfo>()
 
+    private let clearLocalDataTrigger = PublishRelay<Void>()
+
     private let companyInfoRelay = PublishRelay<DataSource>()
 
     private let saveCompleteRelay = PublishRelay<Void>()
 
-    private let lastUpdatedRelay = PublishRelay<String>()
+    private let clearCompleteRelay = PublishRelay<Void>()
+
+    private let lastUpdatedRelay = PublishRelay<String?>()
 
     var companyInfo: Observable<CompanyInfo> {
-        companyInfoRelay.map {
+        companyInfoRelay.compactMap {
             switch $0 {
             case .remote(let data): return data
             case .local(let data): return data
@@ -34,7 +38,11 @@ final class FetchAndSaveDataUseCase {
         saveCompleteRelay.asObservable()
     }
 
-    var lastUpdated: Observable<String> {
+    var clearComplete: Observable<Void> {
+        clearCompleteRelay.asObservable()
+    }
+
+    var lastUpdated: Observable<String?> {
         lastUpdatedRelay.asObservable()
     }
 
@@ -90,9 +98,20 @@ final class FetchAndSaveDataUseCase {
             }
             .bind(to: lastUpdatedRelay)
             .disposed(by: disposeBag)
+
+        clearLocalDataTrigger
+            .flatMapLatest {
+                repository.clear()
+            }
+            .bind(to: clearCompleteRelay)
+            .disposed(by: disposeBag)
     }
 
     func fetch(id: CompanyInfo.ID) {
         fetchTrigger.accept(id)
+    }
+
+    func clear() {
+        clearLocalDataTrigger.accept(())
     }
 }
