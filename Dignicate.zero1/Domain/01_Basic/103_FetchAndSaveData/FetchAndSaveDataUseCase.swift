@@ -94,7 +94,13 @@ final class FetchAndSaveDataUseCase {
         fetchLastUpdatedTrigger
             .flatMapLatest {
                 repository.fetchLastUpdated()
-                    .map { "\($0)" }
+                    .map { date -> String? in
+                        if let date = date {
+                            return "\(date)"
+                        } else {
+                            return nil
+                        }
+                    }
             }
             .bind(to: lastUpdatedRelay)
             .disposed(by: disposeBag)

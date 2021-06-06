@@ -66,10 +66,14 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
         }
     }
 
-    func fetchLastUpdated() -> Single<Date> {
+    func fetchLastUpdated() -> Single<Date?> {
         Single.create { observer in
-            let value = UserDefaults.standard.double(forKey: UserDefaultKey.companyInfoLastUpdate)
-            observer(.success(Date(timeIntervalSince1970: value)))
+            if let stringValue = UserDefaults.standard.string(forKey: UserDefaultKey.companyInfoLastUpdate),
+               let doubleValue = Double(stringValue) {
+                observer(.success(Date(timeIntervalSince1970: doubleValue)))
+            } else {
+                observer(.success(nil))
+            }
             return Disposables.create()
         }
     }
