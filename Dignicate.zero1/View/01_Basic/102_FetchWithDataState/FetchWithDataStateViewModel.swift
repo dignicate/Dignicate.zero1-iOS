@@ -10,7 +10,7 @@ final class FetchWithDataStateViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let useCase = FetchWithDataStateUseCase(repository: SimpleCompanyInfoRepositoryMock(delayMs: 2.5))
+    private let useCase = FetchWithDataStateUseCase(repository: SimpleCompanyInfoRepositoryMock(delaySec: 2.5))
 
     var companyNameJP: Driver<String> {
         useCase

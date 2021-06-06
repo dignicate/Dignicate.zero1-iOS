@@ -5,6 +5,7 @@
 import Foundation
 
 struct CompanyInfo {
+    let id: ID
     let nameJP: String
     let nameEN: String
     let address: String

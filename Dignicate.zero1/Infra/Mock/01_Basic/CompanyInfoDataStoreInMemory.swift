@@ -20,7 +20,7 @@ final class CompanyInfoMemoryCacheDataStore {
         memoryCache[id]
     }
 
-    func save(id: CompanyInfo.ID, companyInfo: CompanyInfo) -> Void {
-        memoryCache[id] = companyInfo
+    func save(companyInfo: CompanyInfo) -> Void {
+        memoryCache[companyInfo.id] = companyInfo
     }
 }

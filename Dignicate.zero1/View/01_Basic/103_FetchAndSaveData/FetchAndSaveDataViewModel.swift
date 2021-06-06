@@ -10,7 +10,7 @@ final class FetchAndSaveDataViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let useCase = FetchAndSaveDataUseCase(repository: CompanyInfoFetchAndSaveRepositoryMock(delayMs: 1800))
+    private let useCase = FetchAndSaveDataUseCase(repository: CompanyInfoFetchAndSaveRepositoryMock(delaySec: 1.8))
 
     var companyNameJP: Driver<String> {
         useCase
@@ -29,9 +29,14 @@ final class FetchAndSaveDataViewModel {
     }
 
     var lastUpdated: Driver<String> {
-        useCase
-            .lastUpdated
+        Observable.combineLatest(
+                useCase.fetchedData,
+                useCase.lastUpdated.startWith(""))
+            .map { _, lastUpdated in
+                lastUpdated
+            }
             .startWith("")
+            .distinctUntilChanged()
             .asDriver(onErrorDriveWith: .empty())
     }
 

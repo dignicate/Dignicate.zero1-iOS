@@ -11,17 +11,17 @@ final class FetchAndSaveDataUseCase {
 
     private let fetchTrigger = PublishRelay<CompanyInfo.ID>()
 
-    private let saveTrigger = PublishRelay<(CompanyInfo.ID, CompanyInfo)>()
+    private let saveTrigger = PublishRelay<CompanyInfo>()
 
-    private let fetchedDataRelay = PublishRelay<(CompanyInfo.ID, DataSource)>()
+    private let fetchedDataRelay = PublishRelay<DataSource>()
 
     private let saveCompleteRelay = PublishRelay<Void>()
 
     private let lastUpdatedRelay = PublishRelay<String>()
 
     var fetchedData: Observable<CompanyInfo> {
-        fetchedDataRelay.map { id, dataSource in
-            switch dataSource {
+        fetchedDataRelay.map {
+            switch $0 {
             case .remote(let data): return data
             case .local(let data): return data
             }
@@ -45,7 +45,6 @@ final class FetchAndSaveDataUseCase {
         fetchTrigger
             .flatMapLatest { id in
                 repository.fetch(id: id)
-                    .map { (id, $0) }
             }
             .bind(to: fetchedDataRelay)
             .disposed(by: disposeBag)
@@ -59,9 +58,9 @@ final class FetchAndSaveDataUseCase {
             .disposed(by: disposeBag)
 
         fetchedDataRelay
-            .compactMap { id, data in
-                switch data {
-                case .remote(let data): return (id, data)
+            .compactMap {
+                switch $0 {
+                case .remote(let data): return data
                 case .local: return nil
                 }
             }
@@ -69,8 +68,8 @@ final class FetchAndSaveDataUseCase {
             .disposed(by: disposeBag)
 
         saveTrigger
-            .flatMapLatest { id, companyInfo in
-                repository.save(id: id, companyInfo: companyInfo)
+            .flatMapLatest {
+                repository.save(companyInfo: $0)
             }
             .bind(to: saveCompleteRelay)
             .disposed(by: disposeBag)

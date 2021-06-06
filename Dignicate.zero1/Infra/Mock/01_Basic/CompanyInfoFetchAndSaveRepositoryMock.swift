@@ -11,14 +11,14 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
         static let companyInfoLastUpdate = "companyInfoLastUpdate"
     }
 
-    private let delayMs: Double
+    private let delaySec: Double
 
     private var memoryCache: CompanyInfoMemoryCacheDataStore {
         .instance
     }
 
-    init(delayMs: Double) {
-        self.delayMs = delayMs
+    init(delaySec: Double) {
+        self.delaySec = delaySec
     }
 
     func fetch(id: CompanyInfo.ID) -> Single<FetchAndSaveDataUseCase.DataSource> {
@@ -26,19 +26,29 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
            let data = memoryCache.fetch(id: id) {
             return Single.just(.local(companyInfo: data))
         } else {
-            // WARNING: This is NOT an appropriate way I presume.
-            // I did like below because it is mare a MOCK.
-            return SimpleCompanyInfoRepositoryMock(delayMs: delayMs)
-                .fetch(id: id)
-                .map { .remote(companyInfo: $0) }
+            return Single.create { observer in
+                DispatchQueue.main.asyncAfter(deadline: .now() + delaySec) {
+                    let data = CompanyInfo(
+                        id: .init(value: 1234),
+                        nameJP: "ディグニケート合同会社",
+                        nameEN: "Dignicate, LLC",
+                        address: "東京都新宿区西新宿３−１−５新宿嘉泉ビル８F",
+                        foundationDate: .init(year: 2019, month: 5, day: 20),
+                        capital: .jpy(amount: 90000000000000),
+                        numberOfEmployees: 29018
+                    )
+                    observer(.success(.remote(companyInfo: data)))
+                }
+                return Disposables.create()
+            }
         }
     }
 
-    func save(id: CompanyInfo.ID, companyInfo: CompanyInfo) -> Single<Void> {
+    func save(companyInfo: CompanyInfo) -> Single<Void> {
         Single.create { observer in
             UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: UserDefaultKey.companyInfoLastUpdate)
             observer(.success(
-                memoryCache.save(id: id, companyInfo: companyInfo)
+                memoryCache.save(companyInfo: companyInfo)
             ))
             return Disposables.create()
         }
