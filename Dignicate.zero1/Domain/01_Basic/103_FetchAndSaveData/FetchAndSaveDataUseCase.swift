@@ -11,16 +11,18 @@ final class FetchAndSaveDataUseCase {
 
     private let fetchTrigger = PublishRelay<CompanyInfo.ID>()
 
+    private let fetchLastUpdatedTrigger = PublishRelay<Void>()
+
     private let saveTrigger = PublishRelay<CompanyInfo>()
 
-    private let fetchedDataRelay = PublishRelay<DataSource>()
+    private let companyInfoRelay = PublishRelay<DataSource>()
 
     private let saveCompleteRelay = PublishRelay<Void>()
 
     private let lastUpdatedRelay = PublishRelay<String>()
 
-    var fetchedData: Observable<CompanyInfo> {
-        fetchedDataRelay.map {
+    var companyInfo: Observable<CompanyInfo> {
+        companyInfoRelay.map {
             switch $0 {
             case .remote(let data): return data
             case .local(let data): return data
@@ -46,18 +48,10 @@ final class FetchAndSaveDataUseCase {
             .flatMapLatest { id in
                 repository.fetch(id: id)
             }
-            .bind(to: fetchedDataRelay)
+            .bind(to: companyInfoRelay)
             .disposed(by: disposeBag)
 
-        fetchTrigger
-            .flatMapLatest { _ in
-                repository.fetchLastUpdated()
-                    .map { "\($0)" }
-            }
-            .bind(to: lastUpdatedRelay)
-            .disposed(by: disposeBag)
-
-        fetchedDataRelay
+        companyInfoRelay
             .compactMap {
                 switch $0 {
                 case .remote(let data): return data
@@ -67,11 +61,34 @@ final class FetchAndSaveDataUseCase {
             .bind(to: saveTrigger)
             .disposed(by: disposeBag)
 
+        companyInfoRelay
+            .filter {
+                switch $0 {
+                case .remote: return false
+                case .local: return true
+                }
+            }
+            .map { _ in () }
+            .bind(to: fetchLastUpdatedTrigger)
+            .disposed(by: disposeBag)
+
         saveTrigger
             .flatMapLatest {
                 repository.save(companyInfo: $0)
             }
             .bind(to: saveCompleteRelay)
+            .disposed(by: disposeBag)
+
+        saveCompleteRelay
+            .bind(to: fetchLastUpdatedTrigger)
+            .disposed(by: disposeBag)
+
+        fetchLastUpdatedTrigger
+            .flatMapLatest {
+                repository.fetchLastUpdated()
+                    .map { "\($0)" }
+            }
+            .bind(to: lastUpdatedRelay)
             .disposed(by: disposeBag)
     }
 

@@ -14,7 +14,7 @@ final class FetchAndSaveDataViewModel {
 
     var companyNameJP: Driver<String> {
         useCase
-            .fetchedData
+            .companyInfo
             .map(\.nameJP)
             .startWith("")
             .asDriver(onErrorDriveWith: .empty())
@@ -22,7 +22,7 @@ final class FetchAndSaveDataViewModel {
 
     var companyNameEN: Driver<String> {
         useCase
-            .fetchedData
+            .companyInfo
             .map(\.nameEN)
             .startWith("")
             .asDriver(onErrorDriveWith: .empty())
@@ -30,7 +30,7 @@ final class FetchAndSaveDataViewModel {
 
     var lastUpdated: Driver<String> {
         Observable.combineLatest(
-                useCase.fetchedData,
+                useCase.companyInfo,
                 useCase.lastUpdated.startWith(""))
             .map { _, lastUpdated in
                 lastUpdated
