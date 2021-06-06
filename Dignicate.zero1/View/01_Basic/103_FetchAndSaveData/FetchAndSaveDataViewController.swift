@@ -16,6 +16,8 @@ final class FetchAndSaveDataViewController: UIViewController {
 
     @IBOutlet private weak var companyNameENLabel: UILabel!
 
+    @IBOutlet private weak var dataSourceLabel: UILabel!
+
     @IBOutlet private weak var lastUpdatedLabel: UILabel!
 
     init() {
@@ -47,5 +49,9 @@ final class FetchAndSaveDataViewController: UIViewController {
 
     @IBAction private func didTapFetchButton(_ sender: Any) {
         viewModel.didTapFetchButton(id: 1234)
+    }
+
+    @IBAction private func didTapClearButton(_ sender: Any) {
+        
     }
 }
