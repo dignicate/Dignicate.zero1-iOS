@@ -47,9 +47,10 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
     func save(companyInfo: CompanyInfo) -> Single<Void> {
         Single.create { observer in
             UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: UserDefaultKey.companyInfoLastUpdate)
-            observer(.success(
-                memoryCache.save(companyInfo: companyInfo)
-            ))
+            memoryCache.save(companyInfo: companyInfo)
+            DispatchQueue.main.asyncAfter(deadline: .now() + (delaySec * 2)) {
+                observer(.success(()))
+            }
             return Disposables.create()
         }
     }
