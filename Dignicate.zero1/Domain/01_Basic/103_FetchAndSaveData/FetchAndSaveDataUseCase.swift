@@ -19,7 +19,7 @@ final class FetchAndSaveDataUseCase {
 
     private let dataStateRelay = PublishRelay<DataState>()
 
-    private let processStateRelay = PublishRelay<ProcessState>()
+    private let processStateRelay = BehaviorRelay<ProcessState>(value: .noProcess)
 
     private let saveCompleteRelay = PublishRelay<Void>()
 
@@ -63,7 +63,26 @@ final class FetchAndSaveDataUseCase {
         case fetchedLocally
         case saving
         case saved
+        case clearing
         case cleared
+
+        var isFetchAvailable: Bool {
+            switch self {
+            case .noProcess, .fetchedLocally, .saved, .cleared:
+                return true
+            case .fetching, .saving, .clearing:
+                return false
+            }
+        }
+
+        var isClearAvailable: Bool {
+            switch self {
+            case .clearing, .cleared, .fetching, .saving:
+                return false
+            case .noProcess, .fetchedLocally, .saved:
+                return true
+            }
+        }
     }
 
     init(repository: CompanyInfoFetchAndSaveRepositoryProtocol) {
@@ -152,6 +171,11 @@ final class FetchAndSaveDataUseCase {
                 self?.lastUpdatedRelay.accept(nil)
                 self?.processStateRelay.accept(.cleared)
             })
+            .disposed(by: disposeBag)
+
+        clearLocalDataTrigger
+            .map { _ in ProcessState.clearing }
+            .bind(to: processStateRelay)
             .disposed(by: disposeBag)
     }
 

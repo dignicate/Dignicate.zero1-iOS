@@ -56,7 +56,6 @@ final class FetchAndSaveDataViewModel {
 
     var processState: Driver<String> {
         useCase.processState
-            .startWith(.noProcess)
             .map {
                 switch $0 {
                 case .noProcess: return "初期状態"
@@ -64,7 +63,8 @@ final class FetchAndSaveDataViewModel {
                 case .fetchedLocally: return "端末から取得"
                 case .saving: return "内部保存中"
                 case .saved: return "保存完了"
-                case .cleared: return "消去"
+                case .clearing: return "消去中"
+                case .cleared: return "消去完了"
                 }
             }
             .distinctUntilChanged()
@@ -72,9 +72,15 @@ final class FetchAndSaveDataViewModel {
     }
 
     var shouldEnableClearButton: Driver<Bool> {
-        useCase.lastUpdated
-            .map { $0 != nil }
-            .startWith(false)
+        useCase.processState
+            .map { $0.isClearAvailable }
+            .distinctUntilChanged()
+            .asDriver(onErrorDriveWith: .empty())
+    }
+
+    var shouldEnableFetchButton: Driver<Bool> {
+        useCase.processState
+            .map { $0.isFetchAvailable }
             .distinctUntilChanged()
             .asDriver(onErrorDriveWith: .empty())
     }

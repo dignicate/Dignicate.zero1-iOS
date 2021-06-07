@@ -56,6 +56,10 @@ final class FetchAndSaveDataViewController: UIViewController {
             .drive(clearButton.rx.isEnabled)
             .disposed(by: disposeBag)
 
+        viewModel.shouldEnableFetchButton
+            .drive(fetchButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
         viewModel.dataState
             .drive(dataStateLabel.rx.text)
             .disposed(by: disposeBag)
