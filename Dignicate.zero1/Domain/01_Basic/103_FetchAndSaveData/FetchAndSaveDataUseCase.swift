@@ -19,12 +19,19 @@ final class FetchAndSaveDataUseCase {
 
     private let dataStateRelay = PublishRelay<DataState>()
 
+    private let processStateRelay = PublishRelay<ProcessState>()
+
     private let saveCompleteRelay = PublishRelay<Void>()
 
     private let lastUpdatedRelay = PublishRelay<String?>()
 
     var dataState: Observable<DataState> {
         dataStateRelay
+            .asObservable()
+    }
+
+    var processState: Observable<ProcessState> {
+        processStateRelay
             .asObservable()
     }
 
@@ -50,12 +57,25 @@ final class FetchAndSaveDataUseCase {
         }
     }
 
+    enum ProcessState {
+        case noProcess
+        case fetching
+        case saving
+        case saved
+        case cleared
+    }
+
     init(repository: CompanyInfoFetchAndSaveRepositoryProtocol) {
         fetchTrigger
             .flatMapLatest { id in
                 repository.fetch(id: id)
             }
             .bind(to: dataStateRelay)
+            .disposed(by: disposeBag)
+
+        fetchTrigger
+            .map { _ in ProcessState.fetching }
+            .bind(to: processStateRelay)
             .disposed(by: disposeBag)
 
         dataStateRelay
@@ -86,8 +106,18 @@ final class FetchAndSaveDataUseCase {
             .bind(to: saveCompleteRelay)
             .disposed(by: disposeBag)
 
+        saveTrigger
+            .map { _ in ProcessState.saving }
+            .bind(to: processStateRelay)
+            .disposed(by: disposeBag)
+
         saveCompleteRelay
             .bind(to: fetchLastUpdatedTrigger)
+            .disposed(by: disposeBag)
+
+        saveCompleteRelay
+            .map { _ in ProcessState.saved }
+            .bind(to: processStateRelay)
             .disposed(by: disposeBag)
 
         fetchLastUpdatedTrigger
@@ -111,6 +141,7 @@ final class FetchAndSaveDataUseCase {
             .subscribe(onNext: { [weak self] in
                 self?.dataStateRelay.accept(.noData)
                 self?.lastUpdatedRelay.accept(nil)
+                self?.processStateRelay.accept(.cleared)
             })
             .disposed(by: disposeBag)
     }

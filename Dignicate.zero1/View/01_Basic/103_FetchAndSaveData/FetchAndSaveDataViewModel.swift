@@ -54,6 +54,22 @@ final class FetchAndSaveDataViewModel {
             .asDriver(onErrorDriveWith: .empty())
     }
 
+    var processState: Driver<String> {
+        useCase.processState
+            .startWith(.noProcess)
+            .map {
+                switch $0 {
+                case .noProcess: return "初期状態"
+                case .fetching: return "取得中"
+                case .saving: return "保存中"
+                case .saved: return "保存完了"
+                case .cleared: return "消去"
+                }
+            }
+            .distinctUntilChanged()
+            .asDriver(onErrorDriveWith: .empty())
+    }
+
     var shouldEnableClearButton: Driver<Bool> {
         useCase.lastUpdated
             .map { $0 != nil }
