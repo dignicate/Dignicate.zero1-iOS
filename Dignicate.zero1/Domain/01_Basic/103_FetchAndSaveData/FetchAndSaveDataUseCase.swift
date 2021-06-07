@@ -17,16 +17,14 @@ final class FetchAndSaveDataUseCase {
 
     private let clearLocalDataTrigger = PublishRelay<Void>()
 
-    private let companyInfoRelay = PublishRelay<DataSource>()
+    private let dataStateRelay = PublishRelay<DataState>()
 
     private let saveCompleteRelay = PublishRelay<Void>()
 
-    private let clearCompleteRelay = PublishRelay<Void>()
-
     private let lastUpdatedRelay = PublishRelay<String?>()
 
-    var dataSource: Observable<DataSource> {
-        companyInfoRelay
+    var dataState: Observable<DataState> {
+        dataStateRelay
             .asObservable()
     }
 
@@ -34,22 +32,20 @@ final class FetchAndSaveDataUseCase {
         saveCompleteRelay.asObservable()
     }
 
-    var clearComplete: Observable<Void> {
-        clearCompleteRelay.asObservable()
-    }
-
     var lastUpdated: Observable<String?> {
         lastUpdatedRelay.asObservable()
     }
 
-    enum DataSource {
+    enum DataState {
         case remote(companyInfo: CompanyInfo)
         case local(companyInfo: CompanyInfo)
+        case noData
 
-        var data: CompanyInfo {
+        var data: CompanyInfo? {
             switch self {
             case .remote(let data): return data
             case .local(let data): return data
+            case .noData: return nil
             }
         }
     }
@@ -59,23 +55,23 @@ final class FetchAndSaveDataUseCase {
             .flatMapLatest { id in
                 repository.fetch(id: id)
             }
-            .bind(to: companyInfoRelay)
+            .bind(to: dataStateRelay)
             .disposed(by: disposeBag)
 
-        companyInfoRelay
+        dataStateRelay
             .compactMap {
                 switch $0 {
                 case .remote(let data): return data
-                case .local: return nil
+                case .local, .noData: return nil
                 }
             }
             .bind(to: saveTrigger)
             .disposed(by: disposeBag)
 
-        companyInfoRelay
+        dataStateRelay
             .filter {
                 switch $0 {
-                case .remote: return false
+                case .remote, .noData: return false
                 case .local: return true
                 }
             }
@@ -112,12 +108,10 @@ final class FetchAndSaveDataUseCase {
             .flatMapLatest {
                 repository.clearLocalData()
             }
-            .bind(to: clearCompleteRelay)
-            .disposed(by: disposeBag)
-
-        clearCompleteRelay
-            .map { nil }
-            .bind(to: lastUpdatedRelay)
+            .subscribe(onNext: { [weak self] in
+                self?.dataStateRelay.accept(.noData)
+                self?.lastUpdatedRelay.accept(nil)
+            })
             .disposed(by: disposeBag)
     }
 

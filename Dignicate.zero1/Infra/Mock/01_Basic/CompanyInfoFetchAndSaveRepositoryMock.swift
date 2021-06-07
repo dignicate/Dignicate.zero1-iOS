@@ -21,7 +21,7 @@ struct CompanyInfoFetchAndSaveRepositoryMock: CompanyInfoFetchAndSaveRepositoryP
         self.delaySec = delaySec
     }
 
-    func fetch(id: CompanyInfo.ID) -> Single<FetchAndSaveDataUseCase.DataSource> {
+    func fetch(id: CompanyInfo.ID) -> Single<FetchAndSaveDataUseCase.DataState> {
         if memoryCache.hasMemoryCache(id: id),
            let data = memoryCache.fetch(id: id) {
             return Single.just(.local(companyInfo: data))

@@ -14,23 +14,23 @@ final class FetchAndSaveDataViewModel {
 
     var companyNameJP: Driver<String> {
         useCase
-            .dataSource
-            .map { $0.data.nameJP }
+            .dataState
+            .map { $0.data?.nameJP ?? "" }
             .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
     var companyNameEN: Driver<String> {
         useCase
-            .dataSource
-            .map { $0.data.nameEN }
+            .dataState
+            .map { $0.data?.nameEN ?? "" }
             .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
     var lastUpdated: Driver<String> {
         Observable.combineLatest(
-                useCase.dataSource,
+                useCase.dataState,
                 useCase.lastUpdated)
             .map { _, lastUpdated in
                 lastUpdated ?? ""
@@ -41,11 +41,12 @@ final class FetchAndSaveDataViewModel {
     }
 
     var dataSourceName: Driver<String> {
-        useCase.dataSource
+        useCase.dataState
             .map {
                 switch $0 {
                 case .remote: return "リモート（モック）"
                 case .local: return "ローカル保存"
+                case .noData: return ""
                 }
             }
             .startWith("")
@@ -59,10 +60,6 @@ final class FetchAndSaveDataViewModel {
             .startWith(false)
             .distinctUntilChanged()
             .asDriver(onErrorDriveWith: .empty())
-    }
-
-    var shouldClearAllData: Driver<Void> {
-        useCase.clearComplete.asDriver(onErrorDriveWith: .empty())
     }
 
     func didTapFetchButton(id: Int) {
