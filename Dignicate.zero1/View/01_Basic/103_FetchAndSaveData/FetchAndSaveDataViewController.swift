@@ -16,7 +16,9 @@ final class FetchAndSaveDataViewController: UIViewController {
 
     @IBOutlet private weak var companyNameENLabel: UILabel!
 
-    @IBOutlet private weak var dataSourceLabel: UILabel!
+    @IBOutlet private weak var dataStateLabel: UILabel!
+
+    @IBOutlet private weak var processStateLabel: UILabel!
 
     @IBOutlet private weak var lastUpdatedLabel: UILabel!
 
@@ -54,8 +56,12 @@ final class FetchAndSaveDataViewController: UIViewController {
             .drive(clearButton.rx.isEnabled)
             .disposed(by: disposeBag)
 
-        viewModel.dataSourceName
-            .drive(dataSourceLabel.rx.text)
+        viewModel.dataState
+            .drive(dataStateLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.processState
+            .drive(processStateLabel.rx.text)
             .disposed(by: disposeBag)
     }
 

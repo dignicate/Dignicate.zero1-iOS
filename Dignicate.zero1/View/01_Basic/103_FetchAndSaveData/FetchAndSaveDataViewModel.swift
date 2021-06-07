@@ -10,7 +10,7 @@ final class FetchAndSaveDataViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let useCase = FetchAndSaveDataUseCase(repository: CompanyInfoFetchAndSaveRepositoryMock(delaySec: 0.2))
+    private let useCase = FetchAndSaveDataUseCase(repository: CompanyInfoFetchAndSaveRepositoryMock(delaySec: 0.8))
 
     var companyNameJP: Driver<String> {
         useCase
@@ -40,7 +40,7 @@ final class FetchAndSaveDataViewModel {
             .asDriver(onErrorDriveWith: .empty())
     }
 
-    var dataSourceName: Driver<String> {
+    var dataState: Driver<String> {
         useCase.dataState
             .map {
                 switch $0 {
@@ -61,7 +61,8 @@ final class FetchAndSaveDataViewModel {
                 switch $0 {
                 case .noProcess: return "初期状態"
                 case .fetching: return "取得中"
-                case .saving: return "保存中"
+                case .fetchedLocally: return "端末から取得"
+                case .saving: return "内部保存中"
                 case .saved: return "保存完了"
                 case .cleared: return "消去"
                 }

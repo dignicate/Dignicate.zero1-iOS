@@ -60,6 +60,7 @@ final class FetchAndSaveDataUseCase {
     enum ProcessState {
         case noProcess
         case fetching
+        case fetchedLocally
         case saving
         case saved
         case cleared
@@ -88,7 +89,7 @@ final class FetchAndSaveDataUseCase {
             .bind(to: saveTrigger)
             .disposed(by: disposeBag)
 
-        dataStateRelay
+        let localFetchTrigger = dataStateRelay
             .filter {
                 switch $0 {
                 case .remote, .noData: return false
@@ -96,7 +97,15 @@ final class FetchAndSaveDataUseCase {
                 }
             }
             .map { _ in () }
+            .delay(.milliseconds(500), scheduler: MainScheduler.instance)
+
+        localFetchTrigger
             .bind(to: fetchLastUpdatedTrigger)
+            .disposed(by: disposeBag)
+
+        localFetchTrigger
+            .map { _ in ProcessState.fetchedLocally }
+            .bind(to: processStateRelay)
             .disposed(by: disposeBag)
 
         saveTrigger
