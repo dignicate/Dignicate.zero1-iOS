@@ -5,6 +5,7 @@
 import Foundation
 
 struct CompanyInfo {
+    let id: ID
     let nameJP: String
     let nameEN: String
     let address: String
@@ -12,7 +13,7 @@ struct CompanyInfo {
     let capital: BasicFetchMockDomain.Currency
     let numberOfEmployees: Int
 
-    struct ID {
+    struct ID: Hashable {
         let value: Int
     }
 }

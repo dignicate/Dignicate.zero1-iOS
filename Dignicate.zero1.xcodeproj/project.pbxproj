@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		56A14AB3B53A2E07E2CC4FDE /* Pods_Dignicate_zero1_Dignicate_zero1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DD343CC93620A12127F8E6 /* Pods_Dignicate_zero1_Dignicate_zero1UITests.framework */; };
 		6148F3496EC19301BD849245 /* Pods_Dignicate_zero1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7026D913F9453638EF385579 /* Pods_Dignicate_zero1.framework */; };
-		855F51FF903BE57B3A476F4D /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */; };
+		855F51C69772B1C173921698 /* FetchAndSaveDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */; };
 		855F52815C5A95A32868CA79 /* FetchWithDataStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */; };
+		855F5369ACEAF3CD77D2C760 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */; };
 		855F5418984676741BDF3EBD /* FetchWithDataStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */; };
 		855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */; };
+		855F54E4F2C23BDF06AFE4D3 /* FetchAndSaveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5CB552D3BDABD6687377 /* FetchAndSaveDataViewController.swift */; };
 		855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */; };
 		855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F52470919915DBE44CB22 /* CompanyInfo.swift */; };
+		855F5AA9C990E65442556757 /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */; };
+		855F5AB1BC08C931D137D3FB /* FetchAndSaveDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AA5B6B46F8AE88618BD /* FetchAndSaveDataViewModel.swift */; };
 		855F5B7F99ECED87AEE2C873 /* BasicFetchAPIUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */; };
 		855F5BF9A2E3AA93C14273FB /* FetchWithDataStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */; };
 		8C060CA7265004C900620288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CA6265004C900620288 /* AppDelegate.swift */; };
@@ -25,13 +29,16 @@
 		8C060CB3265004CA00620288 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C060CB1265004CA00620288 /* LaunchScreen.storyboard */; };
 		8C060CBE265004CA00620288 /* Dignicate_zero1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CBD265004CA00620288 /* Dignicate_zero1Tests.swift */; };
 		8C060CC9265004CA00620288 /* Dignicate_zero1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CC8265004CA00620288 /* Dignicate_zero1UITests.swift */; };
+		8C2382672666F6FC001A2CDC /* FetchAndSaveDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2382662666F6FC001A2CDC /* FetchAndSaveDataViewController.xib */; };
 		8C2ED4CF265562B900D3054D /* BasicFetchAPIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2ED4CE265562B900D3054D /* BasicFetchAPIViewController.xib */; };
 		8CD389422653018300D6F869 /* TopViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD389412653018300D6F869 /* TopViewTableCell.xib */; };
 		8CDD7D2426563BDD00F9B503 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CDD7D2326563BDD00F9B503 /* Colors.xcassets */; };
 		DBF1486429FED1EC6FEA82B2 /* Pods_Dignicate_zero1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C823DF5268C10002526D362 /* Pods_Dignicate_zero1Tests.framework */; };
 		E897E054B73B470452303D42 /* BasicFetchMockDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897EC9DEB0A81C2038818EF /* BasicFetchMockDomain.swift */; };
+		E897E3D303653AA6A379563F /* CompanyInfoDataStoreInMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E018EA9F331EF7FD79D1 /* CompanyInfoDataStoreInMemory.swift */; };
 		E897E6F8CCC97C43CBF67C90 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897EE3D03DFB2D578AA4133 /* TopViewModel.swift */; };
 		E897E79F94384F67658D9AB4 /* BasicFetchAPIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E082BAEF78C0FFF17706 /* BasicFetchAPIViewModel.swift */; };
+		E897E831AC66B10271714E3A /* CompanyInfoFetchAndSaveRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E827967AD304DA62BA2E /* CompanyInfoFetchAndSaveRepositoryMock.swift */; };
 		E897E942D0C02431FCD08DCF /* TopViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E032FA74925FB5FA3C17 /* TopViewTableCell.swift */; };
 		E897ECB580CEBEF411CC06D6 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897E2D62ECBD60B61401F9B /* Resources.swift */; };
 		E897EE7E53C9EA3ED885D30E /* BasicFetchAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897EF4DC8D3A3D80AA5FE9E /* BasicFetchAPIViewController.swift */; };
@@ -65,12 +72,16 @@
 		7C823DF5268C10002526D362 /* Pods_Dignicate_zero1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dignicate_zero1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateUseCase.swift; sourceTree = "<group>"; };
 		855F52470919915DBE44CB22 /* CompanyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
+		855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryProtocol.swift; sourceTree = "<group>"; };
+		855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetchAndSaveRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewController.swift; sourceTree = "<group>"; };
+		855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataUseCase.swift; sourceTree = "<group>"; };
 		855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIUseCase.swift; sourceTree = "<group>"; };
+		855F5AA5B6B46F8AE88618BD /* FetchAndSaveDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataViewModel.swift; sourceTree = "<group>"; };
 		855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchWithDataStateViewController.xib; sourceTree = "<group>"; };
-		855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewModel.swift; sourceTree = "<group>"; };
 		855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryMock.swift; sourceTree = "<group>"; };
+		855F5CB552D3BDABD6687377 /* FetchAndSaveDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataViewController.swift; sourceTree = "<group>"; };
 		8C060CA3265004C900620288 /* Dignicate.zero1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dignicate.zero1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C060CA6265004C900620288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C060CA8265004C900620288 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,13 +96,16 @@
 		8C060CC4265004CA00620288 /* Dignicate.zero1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Dignicate.zero1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C060CC8265004CA00620288 /* Dignicate_zero1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dignicate_zero1UITests.swift; sourceTree = "<group>"; };
 		8C060CCA265004CA00620288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C2382662666F6FC001A2CDC /* FetchAndSaveDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchAndSaveDataViewController.xib; sourceTree = "<group>"; };
 		8C2ED4CE265562B900D3054D /* BasicFetchAPIViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicFetchAPIViewController.xib; sourceTree = "<group>"; };
 		8CD389412653018300D6F869 /* TopViewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopViewTableCell.xib; sourceTree = "<group>"; };
 		8CDD7D2326563BDD00F9B503 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B38B81D7EDF255A6775AD05C /* Pods-Dignicate.zero1-Dignicate.zero1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dignicate.zero1-Dignicate.zero1UITests.release.xcconfig"; path = "Target Support Files/Pods-Dignicate.zero1-Dignicate.zero1UITests/Pods-Dignicate.zero1-Dignicate.zero1UITests.release.xcconfig"; sourceTree = "<group>"; };
+		E897E018EA9F331EF7FD79D1 /* CompanyInfoDataStoreInMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfoDataStoreInMemory.swift; sourceTree = "<group>"; };
 		E897E032FA74925FB5FA3C17 /* TopViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewTableCell.swift; sourceTree = "<group>"; };
 		E897E082BAEF78C0FFF17706 /* BasicFetchAPIViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIViewModel.swift; sourceTree = "<group>"; };
 		E897E2D62ECBD60B61401F9B /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		E897E827967AD304DA62BA2E /* CompanyInfoFetchAndSaveRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetchAndSaveRepositoryMock.swift; sourceTree = "<group>"; };
 		E897EC9DEB0A81C2038818EF /* BasicFetchMockDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchMockDomain.swift; sourceTree = "<group>"; };
 		E897EE3D03DFB2D578AA4133 /* TopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		E897EF4DC8D3A3D80AA5FE9E /* BasicFetchAPIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIViewController.swift; sourceTree = "<group>"; };
@@ -140,11 +154,30 @@
 			children = (
 				855F5E20BA7A131776D974E8 /* 101_FetchAPI */,
 				855F5E29719D8319359F5D53 /* 102_FetchWithDataState */,
-				855F5AD46F9DFBBB254E9C3E /* SimpleCompanyInfoRepositoryProtocol.swift */,
 				855F52470919915DBE44CB22 /* CompanyInfo.swift */,
 				E897EC9DEB0A81C2038818EF /* BasicFetchMockDomain.swift */,
+				855F53EB3C440404DA0CBB8F /* 103_FetchAndSaveData */,
 			);
 			path = 01_Basic;
+			sourceTree = "<group>";
+		};
+		855F53EB3C440404DA0CBB8F /* 103_FetchAndSaveData */ = {
+			isa = PBXGroup;
+			children = (
+				855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */,
+				855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */,
+			);
+			path = 103_FetchAndSaveData;
+			sourceTree = "<group>";
+		};
+		855F5782F35CFB57010002AC /* 103_FetchAndSaveData */ = {
+			isa = PBXGroup;
+			children = (
+				855F5CB552D3BDABD6687377 /* FetchAndSaveDataViewController.swift */,
+				8C2382662666F6FC001A2CDC /* FetchAndSaveDataViewController.xib */,
+				855F5AA5B6B46F8AE88618BD /* FetchAndSaveDataViewModel.swift */,
+			);
+			path = 103_FetchAndSaveData;
 			sourceTree = "<group>";
 		};
 		855F5AAA353D41BAF38C15CC /* 102_FetchWithDataState */ = {
@@ -161,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */,
+				E897E827967AD304DA62BA2E /* CompanyInfoFetchAndSaveRepositoryMock.swift */,
+				E897E018EA9F331EF7FD79D1 /* CompanyInfoDataStoreInMemory.swift */,
 			);
 			path = 01_Basic;
 			sourceTree = "<group>";
@@ -169,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */,
+				855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */,
 			);
 			path = 101_FetchAPI;
 			sourceTree = "<group>";
@@ -317,6 +353,7 @@
 			children = (
 				E897E2233D130D7563E1C31E /* 101_FetchAPI */,
 				855F5AAA353D41BAF38C15CC /* 102_FetchWithDataState */,
+				855F5782F35CFB57010002AC /* 103_FetchAndSaveData */,
 			);
 			path = 01_Basic;
 			sourceTree = "<group>";
@@ -449,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2382672666F6FC001A2CDC /* FetchAndSaveDataViewController.xib in Resources */,
 				8C060CB3265004CA00620288 /* LaunchScreen.storyboard in Resources */,
 				8C060CB0265004CA00620288 /* Assets.xcassets in Resources */,
 				8C060CAE265004C900620288 /* Main.storyboard in Resources */,
@@ -610,12 +648,18 @@
 				E897E79F94384F67658D9AB4 /* BasicFetchAPIViewModel.swift in Sources */,
 				855F5B7F99ECED87AEE2C873 /* BasicFetchAPIUseCase.swift in Sources */,
 				855F5418984676741BDF3EBD /* FetchWithDataStateUseCase.swift in Sources */,
-				855F51FF903BE57B3A476F4D /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */,
 				855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */,
 				855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */,
 				855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */,
 				855F52815C5A95A32868CA79 /* FetchWithDataStateViewModel.swift in Sources */,
 				E897E054B73B470452303D42 /* BasicFetchMockDomain.swift in Sources */,
+				855F5369ACEAF3CD77D2C760 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift in Sources */,
+				855F5AA9C990E65442556757 /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */,
+				855F51C69772B1C173921698 /* FetchAndSaveDataUseCase.swift in Sources */,
+				855F54E4F2C23BDF06AFE4D3 /* FetchAndSaveDataViewController.swift in Sources */,
+				855F5AB1BC08C931D137D3FB /* FetchAndSaveDataViewModel.swift in Sources */,
+				E897E831AC66B10271714E3A /* CompanyInfoFetchAndSaveRepositoryMock.swift in Sources */,
+				E897E3D303653AA6A379563F /* CompanyInfoDataStoreInMemory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

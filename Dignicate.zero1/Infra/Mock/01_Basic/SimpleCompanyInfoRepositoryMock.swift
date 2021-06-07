@@ -7,16 +7,17 @@ import RxRelay
 
 struct SimpleCompanyInfoRepositoryMock: SimpleCompanyInfoRepositoryProtocol {
 
-    private let delayMs: Double
+    private let delaySec: Double
 
-    init(delayMs: Double) {
-        self.delayMs = delayMs
+    init(delaySec: Double) {
+        self.delaySec = delaySec
     }
 
     func fetch(id: CompanyInfo.ID) -> Single<CompanyInfo> {
         Single.create { observer in
-            DispatchQueue.main.asyncAfter(deadline: .now() + delayMs) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delaySec) {
                 let data = CompanyInfo(
+                    id: .init(value: 1234),
                     nameJP: "ディグニケート合同会社",
                     nameEN: "Dignicate, LLC",
                     address: "東京都新宿区西新宿３−１−５新宿嘉泉ビル８F",

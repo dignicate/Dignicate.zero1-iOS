@@ -10,12 +10,13 @@ final class FetchWithDataStateViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let useCase = FetchWithDataStateUseCase(repository: SimpleCompanyInfoRepositoryMock(delayMs: 2.5))
+    private let useCase = FetchWithDataStateUseCase(repository: SimpleCompanyInfoRepositoryMock(delaySec: 2.5))
 
     var companyNameJP: Driver<String> {
         useCase
             .companyInfo
             .map(\.nameJP)
+            .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -23,6 +24,7 @@ final class FetchWithDataStateViewModel {
         useCase
             .companyInfo
             .map(\.nameEN)
+            .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -30,6 +32,7 @@ final class FetchWithDataStateViewModel {
         useCase
             .companyInfo
             .map(\.address)
+            .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -38,6 +41,7 @@ final class FetchWithDataStateViewModel {
             .companyInfo
             .map(\.foundationDate)
             .compactMap { $0.localizedExpression }
+            .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -46,6 +50,7 @@ final class FetchWithDataStateViewModel {
             .companyInfo
             .map(\.capital)
             .compactMap { $0.localizedExpression }
+            .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -54,6 +59,7 @@ final class FetchWithDataStateViewModel {
             .companyInfo
             .map(\.numberOfEmployees)
             .compactMap { "\($0) 名" }
+            .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -61,6 +67,7 @@ final class FetchWithDataStateViewModel {
         useCase
             .isInProgress
             .map { !$0 }
+            .startWith(true)
             .asDriver(onErrorDriveWith: .empty())
     }
 
