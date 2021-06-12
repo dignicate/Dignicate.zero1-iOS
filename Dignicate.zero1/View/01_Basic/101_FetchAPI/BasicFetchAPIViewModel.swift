@@ -37,7 +37,7 @@ final class BasicFetchAPIViewModel {
         useCase
             .companyInfo
             .map(\.foundationDate)
-            .compactMap { $0.localizedExpression }
+            .map { $0.localizedExpression }
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -45,7 +45,7 @@ final class BasicFetchAPIViewModel {
         useCase
             .companyInfo
             .map(\.capital)
-            .compactMap { $0.localizedExpression }
+            .map { $0.localizedExpression }
             .asDriver(onErrorDriveWith: .empty())
     }
 
@@ -53,28 +53,11 @@ final class BasicFetchAPIViewModel {
         useCase
             .companyInfo
             .map(\.numberOfEmployees)
-            .compactMap { MockMethods.convertNumberOfEmployeesIntoJapaneseExpression(number: $0) }
+            .map { "\($0) 名" }
             .asDriver(onErrorDriveWith: .empty())
     }
 
     func didTapFetchButton(id: Int) {
         useCase.fetch(id: .init(value: id))
-    }
-}
-
-/// MARK: - Mock methods.
-
-/// As a mock, this simply returns constant values to imitate the conversion process,
-/// instead of real calculation.
-fileprivate struct MockMethods {
-    private init() {}
-    static func convertDateIntoJavaneseExpression(date: String) -> String {
-        "令和元年５月２０日"
-    }
-    static func convertCapitalIntoJapaneseExpression(capital: Int) -> String {
-        "90兆円"
-    }
-    static func convertNumberOfEmployeesIntoJapaneseExpression(number: Int) -> String {
-        "\(number) 名"
     }
 }

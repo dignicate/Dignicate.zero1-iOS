@@ -77,10 +77,10 @@ final class FetchAndSaveDataUseCase {
 
         var isClearAvailable: Bool {
             switch self {
-            case .clearing, .cleared, .fetching, .saving:
-                return false
             case .noProcess, .fetchedLocally, .saved:
                 return true
+            case .clearing, .cleared, .fetching, .saving:
+                return false
             }
         }
     }

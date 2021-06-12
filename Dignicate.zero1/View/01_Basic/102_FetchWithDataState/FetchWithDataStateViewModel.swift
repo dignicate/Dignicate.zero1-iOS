@@ -40,7 +40,7 @@ final class FetchWithDataStateViewModel {
         useCase
             .companyInfo
             .map(\.foundationDate)
-            .compactMap { $0.localizedExpression }
+            .map { $0.localizedExpression }
             .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
@@ -49,7 +49,7 @@ final class FetchWithDataStateViewModel {
         useCase
             .companyInfo
             .map(\.capital)
-            .compactMap { $0.localizedExpression }
+            .map { $0.localizedExpression }
             .startWith("")
             .asDriver(onErrorDriveWith: .empty())
     }
