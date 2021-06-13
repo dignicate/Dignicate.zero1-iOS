@@ -35,10 +35,6 @@ final class FetchAndSaveDataUseCase {
             .asObservable()
     }
 
-    var saveComplete: Observable<Void> {
-        saveCompleteRelay.asObservable()
-    }
-
     var lastUpdated: Observable<String?> {
         lastUpdatedRelay.asObservable()
     }
