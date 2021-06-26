@@ -1,8 +1,8 @@
-# Dignicate-Guideline-iOS
+# Dignicate-zero1
 
 ## Abstract
-This is an example structure for native-iOS development, created by _[Dignicate, LLC](https://dignicate.com)_ to prescribe in-house standard.
-Also, we would share it as case studies based on real problems we often faced so far.
+The _Dignicate-zero1_ is an example project for native-iOS development, created by _[Dignicate, LLC](https://dignicate.com)_ to prescribe in-house standard. 
+It also is to share our experiences in the form of case studies based on situations we encountered so far.
 
 ## Focus
 The project focuses mainly on asynchronous data flow over layered structure such as _Model-View-ViewModel_ and so-called _Clean Architecture_.
