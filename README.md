@@ -1,4 +1,4 @@
-# Dignicate-zero1
+# Dignicate.zero1-iOS
 
 ## Abstract
 The _Dignicate.zero1_ is an example project for native-iOS development, created by _[Dignicate, LLC](https://dignicate.com)_ to prescribe in-house standard. 
@@ -16,7 +16,7 @@ We do not mention:
 ## Getting Started
 * Just clone this project.
 ```
-git clone https://github.com/dignicate/Dignicate.zero1-iOS.git
+git clone https://github.com/dignicate/Dignicate.zero1-Android.git
 ```
 * Then pod install.
 ```
