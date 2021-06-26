@@ -22,3 +22,8 @@ git clone https://github.com/dignicate/Dignicate.zero1-Android.git
 ```
 pod install
 ```
+
+## Screen Shot
+
+<img src="https://user-images.githubusercontent.com/57293323/123500571-f5504f00-d679-11eb-959e-c623dcace5e7.png" width="320"/>
+
