@@ -16,11 +16,13 @@
 		855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */; };
 		855F54E4F2C23BDF06AFE4D3 /* FetchAndSaveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5CB552D3BDABD6687377 /* FetchAndSaveDataViewController.swift */; };
 		855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */; };
+		855F58744038EF7A38D07662 /* OneTimeBillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F53758201774B799D98A8 /* OneTimeBillingViewController.swift */; };
 		855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F52470919915DBE44CB22 /* CompanyInfo.swift */; };
 		855F5AA9C990E65442556757 /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */; };
 		855F5AB1BC08C931D137D3FB /* FetchAndSaveDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AA5B6B46F8AE88618BD /* FetchAndSaveDataViewModel.swift */; };
 		855F5B7F99ECED87AEE2C873 /* BasicFetchAPIUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */; };
 		855F5BF9A2E3AA93C14273FB /* FetchWithDataStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */; };
+		855F5D1C92E93F92F04F1E41 /* OneTimeBillingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5946DDD00CDFD6A47FAF /* OneTimeBillingViewModel.swift */; };
 		8C060CA7265004C900620288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CA6265004C900620288 /* AppDelegate.swift */; };
 		8C060CA9265004C900620288 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CA8265004C900620288 /* SceneDelegate.swift */; };
 		8C060CAB265004C900620288 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CAA265004C900620288 /* TopViewController.swift */; };
@@ -72,9 +74,11 @@
 		7C823DF5268C10002526D362 /* Pods_Dignicate_zero1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dignicate_zero1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateUseCase.swift; sourceTree = "<group>"; };
 		855F52470919915DBE44CB22 /* CompanyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
+		855F53758201774B799D98A8 /* OneTimeBillingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingViewController.swift; sourceTree = "<group>"; };
 		855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetchAndSaveRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewController.swift; sourceTree = "<group>"; };
+		855F5946DDD00CDFD6A47FAF /* OneTimeBillingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingViewModel.swift; sourceTree = "<group>"; };
 		855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataUseCase.swift; sourceTree = "<group>"; };
 		855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIUseCase.swift; sourceTree = "<group>"; };
 		855F5AA5B6B46F8AE88618BD /* FetchAndSaveDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataViewModel.swift; sourceTree = "<group>"; };
@@ -200,6 +204,13 @@
 			path = 01_Basic;
 			sourceTree = "<group>";
 		};
+		855F5CA1C0F13708EAD22E13 /* 04_IAP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 04_IAP;
+			sourceTree = "<group>";
+		};
 		855F5E20BA7A131776D974E8 /* 101_FetchAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +226,15 @@
 				855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */,
 			);
 			path = 102_FetchWithDataState;
+			sourceTree = "<group>";
+		};
+		855F5F5C88F75903677FB796 /* 04_IAP */ = {
+			isa = PBXGroup;
+			children = (
+				855F53758201774B799D98A8 /* OneTimeBillingViewController.swift */,
+				855F5946DDD00CDFD6A47FAF /* OneTimeBillingViewModel.swift */,
+			);
+			path = 04_IAP;
 			sourceTree = "<group>";
 		};
 		8C060C9A265004C900620288 = {
@@ -279,6 +299,7 @@
 			children = (
 				E897E0FC7E4F0A02CBD9EC85 /* 01_Basic */,
 				8CE9ABFB26513B930075CF5F /* Top */,
+				855F5F5C88F75903677FB796 /* 04_IAP */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -372,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				855F5C80DCAFCE3291FB586F /* 01_Basic */,
+				855F5CA1C0F13708EAD22E13 /* 04_IAP */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -660,6 +682,8 @@
 				855F5AB1BC08C931D137D3FB /* FetchAndSaveDataViewModel.swift in Sources */,
 				E897E831AC66B10271714E3A /* CompanyInfoFetchAndSaveRepositoryMock.swift in Sources */,
 				E897E3D303653AA6A379563F /* CompanyInfoDataStoreInMemory.swift in Sources */,
+				855F58744038EF7A38D07662 /* OneTimeBillingViewController.swift in Sources */,
+				855F5D1C92E93F92F04F1E41 /* OneTimeBillingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
