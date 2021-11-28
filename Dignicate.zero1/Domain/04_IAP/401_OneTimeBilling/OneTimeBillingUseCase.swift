@@ -12,7 +12,17 @@ final class OneTimeBillingUseCase {
 
     private let fetchProductsTrigger = PublishRelay<Void>()
 
-    private let productsRelay = PublishRelay<[String]>()
+    private let productsRelay = BehaviorRelay<[String]>(value: [])
+
+    var products: Observable<[String]> {
+        productsRelay
+.debug("## 6")
+            .asObservable()
+    }
+
+    var productsValue: [String] {
+        productsRelay.value
+    }
 
     init(repository: OneTimeBillingRepositoryProtocol) {
         fetchProductsTrigger
