@@ -8,4 +8,9 @@ import RxCocoa
 
 final class OneTimeBillingViewModel {
 
+    private let useCase = OneTimeBillingUseCase(repository: OneTimeBillingRepository())
+
+    func viewDidLoad() {
+        useCase.fetchProducts()
+    }
 }

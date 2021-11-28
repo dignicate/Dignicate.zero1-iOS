@@ -15,6 +15,9 @@
 		855F5418984676741BDF3EBD /* FetchWithDataStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */; };
 		855F5425B37D6A73F319E76E /* FetchWithDataStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */; };
 		855F54E4F2C23BDF06AFE4D3 /* FetchAndSaveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5CB552D3BDABD6687377 /* FetchAndSaveDataViewController.swift */; };
+		855F550E2BA72385F4464BAB /* OneTimeBillingRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5771619D0DF7700CD713 /* OneTimeBillingRepositoryProtocol.swift */; };
+		855F56DE7A8DFCB210AA3356 /* OneTimeBillingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F53FDE600EC4CC5CCD7E8 /* OneTimeBillingUseCase.swift */; };
+		855F56EA45AC3F19EB26DDA6 /* OneTimeBillingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F539778A51FD919D62A14 /* OneTimeBillingRepository.swift */; };
 		855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */; };
 		855F58744038EF7A38D07662 /* OneTimeBillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F53758201774B799D98A8 /* OneTimeBillingViewController.swift */; };
 		855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F52470919915DBE44CB22 /* CompanyInfo.swift */; };
@@ -75,9 +78,12 @@
 		855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateUseCase.swift; sourceTree = "<group>"; };
 		855F52470919915DBE44CB22 /* CompanyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
 		855F53758201774B799D98A8 /* OneTimeBillingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingViewController.swift; sourceTree = "<group>"; };
+		855F539778A51FD919D62A14 /* OneTimeBillingRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingRepository.swift; sourceTree = "<group>"; };
+		855F53FDE600EC4CC5CCD7E8 /* OneTimeBillingUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingUseCase.swift; sourceTree = "<group>"; };
 		855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyInfoFetchAndSaveRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewController.swift; sourceTree = "<group>"; };
+		855F5771619D0DF7700CD713 /* OneTimeBillingRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F5946DDD00CDFD6A47FAF /* OneTimeBillingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingViewModel.swift; sourceTree = "<group>"; };
 		855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataUseCase.swift; sourceTree = "<group>"; };
 		855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIUseCase.swift; sourceTree = "<group>"; };
@@ -184,6 +190,14 @@
 			path = 103_FetchAndSaveData;
 			sourceTree = "<group>";
 		};
+		855F58A9D0229E691F53F440 /* 04_IAP */ = {
+			isa = PBXGroup;
+			children = (
+				855F5EE51A3617224F413998 /* 401_OneTimeBilling */,
+			);
+			path = 04_IAP;
+			sourceTree = "<group>";
+		};
 		855F5AAA353D41BAF38C15CC /* 102_FetchWithDataState */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,9 +218,10 @@
 			path = 01_Basic;
 			sourceTree = "<group>";
 		};
-		855F5CA1C0F13708EAD22E13 /* 04_IAP */ = {
+		855F5DF10ECF5E49F2E333FA /* 04_IAP */ = {
 			isa = PBXGroup;
 			children = (
+				855F539778A51FD919D62A14 /* OneTimeBillingRepository.swift */,
 			);
 			path = 04_IAP;
 			sourceTree = "<group>";
@@ -226,6 +241,15 @@
 				855F520240E20491D5E54171 /* FetchWithDataStateUseCase.swift */,
 			);
 			path = 102_FetchWithDataState;
+			sourceTree = "<group>";
+		};
+		855F5EE51A3617224F413998 /* 401_OneTimeBilling */ = {
+			isa = PBXGroup;
+			children = (
+				855F53FDE600EC4CC5CCD7E8 /* OneTimeBillingUseCase.swift */,
+				855F5771619D0DF7700CD713 /* OneTimeBillingRepositoryProtocol.swift */,
+			);
+			path = 401_OneTimeBilling;
 			sourceTree = "<group>";
 		};
 		855F5F5C88F75903677FB796 /* 04_IAP */ = {
@@ -320,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				855F5320D4525E163E4B921F /* 01_Basic */,
+				855F58A9D0229E691F53F440 /* 04_IAP */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -338,6 +363,7 @@
 		8CE9ABFF26513C890075CF5F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				855F5DF10ECF5E49F2E333FA /* 04_IAP */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -393,7 +419,6 @@
 			isa = PBXGroup;
 			children = (
 				855F5C80DCAFCE3291FB586F /* 01_Basic */,
-				855F5CA1C0F13708EAD22E13 /* 04_IAP */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -684,6 +709,9 @@
 				E897E3D303653AA6A379563F /* CompanyInfoDataStoreInMemory.swift in Sources */,
 				855F58744038EF7A38D07662 /* OneTimeBillingViewController.swift in Sources */,
 				855F5D1C92E93F92F04F1E41 /* OneTimeBillingViewModel.swift in Sources */,
+				855F56DE7A8DFCB210AA3356 /* OneTimeBillingUseCase.swift in Sources */,
+				855F550E2BA72385F4464BAB /* OneTimeBillingRepositoryProtocol.swift in Sources */,
+				855F56EA45AC3F19EB26DDA6 /* OneTimeBillingRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

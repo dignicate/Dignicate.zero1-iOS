@@ -6,5 +6,10 @@ import UIKit
 
 final class OneTimeBillingViewController: UIViewController {
 
+    private let viewModel = OneTimeBillingViewModel()
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.viewDidLoad()
+    }
 }
