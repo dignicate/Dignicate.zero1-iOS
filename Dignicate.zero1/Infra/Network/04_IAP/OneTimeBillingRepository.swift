@@ -1,21 +1,39 @@
 //
-// Created by Shinichi Watanabe on 2021/11/28.
 // Copyright (c) 2021 Dignicate,. All rights reserved.
 //
 
 import RxSwift
+import StoreKit
 
-final class OneTimeBillingRepository: NSObject, OneTimeBillingRepositoryProtocol {
+final class OneTimeBillingRepository: OneTimeBillingRepositoryProtocol {
 
     func fetchProducts() -> Single<[String]> {
-        Single.just(["a", "b", "c"])
+        Single.create { emitter in
+            let request = SKProductsRequestWrapper { (req, res) in
+                emitter(.success(res.products.map { "\($0)" }))
+            }
+            request.start()
+            return Disposables.create()
+        }
     }
 }
 
-import StoreKit
+final class SKProductsRequestWrapper: NSObject, SKProductsRequestDelegate {
 
-extension OneTimeBillingRepository: SKProductsRequestDelegate {
+    private let request: SKProductsRequest
+
+    private let eventHandler: ((SKProductsRequest, SKProductsResponse)) -> Void
+
+    init(eventHandler: @escaping ((SKProductsRequest, SKProductsResponse)) -> Void) {
+        request = SKProductsRequest()
+        self.eventHandler = eventHandler
+    }
+
+    func start() {
+        request.start()
+    }
+
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-
+        eventHandler((request, response))
     }
 }
