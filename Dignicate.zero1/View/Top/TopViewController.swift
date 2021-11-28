@@ -69,6 +69,9 @@ extension TopViewController: UITableViewDelegate {
              .pagination, .listAndDetail, .postAndRefresh:
             // TODO:
             break
+        case .oneTimeBilling:
+            //
+            ()
         }
     }
 }

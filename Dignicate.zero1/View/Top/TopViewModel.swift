@@ -22,6 +22,7 @@ final class TopViewModel {
             case basic = 0
             case tableView = 1
             case userInput = 2
+            case inAppPurchase = 3
 //            case swiftUIIntegration
 
             var title: String {
@@ -29,6 +30,7 @@ final class TopViewModel {
                 case .basic: return "Basic Data Interaction"
                 case .tableView: return "Table View"
                 case .userInput: return "User Input"
+                case .inAppPurchase: return "In App Purchase"
                 }
             }
 
@@ -40,6 +42,8 @@ final class TopViewModel {
                     return [.listAndDetail, .pagination]
                 case .userInput:
                     return [.simpleValidation, .validateAndAutoCorrect, .storeInputsOverScreens]
+                case .inAppPurchase:
+                    return [.oneTimeBilling]
                 }
             }
         }
@@ -54,6 +58,7 @@ final class TopViewModel {
             case simpleValidation
             case validateAndAutoCorrect
             case storeInputsOverScreens
+            case oneTimeBilling
 
             var title: String {
                 switch self {
@@ -66,12 +71,14 @@ final class TopViewModel {
                 case .simpleValidation: return "Simple validation"
                 case .validateAndAutoCorrect: return "Validate and auto-correct"
                 case .storeInputsOverScreens: return "Store inputs over screens"
+                case .oneTimeBilling: return "One Time Billing"
                 }
             }
 
             var isAvailable: Bool {
                 switch self {
-                case .basicFetch, .fetchWithDataState, .fetchAndSave:
+                case .basicFetch, .fetchWithDataState, .fetchAndSave,
+                     .oneTimeBilling:
                     return true
                 case .postAndRefresh, .listAndDetail, .pagination,
                      .simpleValidation, .validateAndAutoCorrect, .storeInputsOverScreens:
