@@ -9,7 +9,7 @@ final class OneTimeBillingRepository: OneTimeBillingRepositoryProtocol {
 
     func fetchProducts() -> Single<[String]> {
         Single.create { emitter in
-            let request = SKProductsRequestWrapper { (req, res) in
+            let request = SKProductsRequestWrapper(productIdentifiers: Set<String>(arrayLiteral: "com.dignicate.zero1.consumable.item.1")) { (req, res) in
                 emitter(.success(res.products.map { "\($0)" }))
             }
             request.start()
@@ -24,8 +24,8 @@ final class SKProductsRequestWrapper: NSObject, SKProductsRequestDelegate {
 
     private let eventHandler: ((SKProductsRequest, SKProductsResponse)) -> Void
 
-    init(eventHandler: @escaping ((SKProductsRequest, SKProductsResponse)) -> Void) {
-        request = SKProductsRequest()
+    init(productIdentifiers: Set<String>, eventHandler: @escaping ((SKProductsRequest, SKProductsResponse)) -> Void) {
+        request = SKProductsRequest(productIdentifiers: productIdentifiers)
         self.eventHandler = eventHandler
     }
 
