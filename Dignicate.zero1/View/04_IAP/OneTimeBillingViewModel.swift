@@ -11,6 +11,10 @@ final class OneTimeBillingViewModel {
     private let useCase = OneTimeBillingUseCase(repository: OneTimeBillingRepository())
 
     func viewDidLoad() {
+        // Do nothing.
+    }
+
+    func didTapFetchDataButton() {
         useCase.fetchProducts()
     }
 }

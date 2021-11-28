@@ -70,8 +70,7 @@ extension TopViewController: UITableViewDelegate {
             // TODO:
             break
         case .oneTimeBilling:
-            //
-            ()
+            navigationController?.pushViewController(OneTimeBillingViewController(), animated: true)
         }
     }
 }

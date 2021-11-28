@@ -12,4 +12,8 @@ final class OneTimeBillingViewController: UIViewController {
         super.viewDidLoad()
         viewModel.viewDidLoad()
     }
+
+    @IBAction private func didTapFetchDataButton(_ sender: Any) {
+        viewModel.didTapFetchDataButton()
+    }
 }
