@@ -20,14 +20,16 @@ final class TopViewModel {
 
         enum Section: Int, CaseIterable {
             case basic = 0
-            case tableView = 1
-            case userInput = 2
-            case inAppPurchase = 3
+            case layout = 1
+            case tableView = 2
+            case userInput = 3
+            case inAppPurchase = 4
 //            case swiftUIIntegration
 
             var title: String {
                 switch self {
                 case .basic: return "Basic Data Interaction"
+                case .layout: return "Layout"
                 case .tableView: return "Table View"
                 case .userInput: return "User Input"
                 case .inAppPurchase: return "In App Purchase"
@@ -38,6 +40,8 @@ final class TopViewModel {
                 switch self {
                 case .basic:
                     return [.basicFetch, .fetchWithDataState, .fetchAndSave, .postAndRefresh]
+                case .layout:
+                    return [.linearWidgetsIntoLines]
                 case .tableView:
                     return [.listAndDetail, .pagination]
                 case .userInput:
@@ -53,6 +57,7 @@ final class TopViewModel {
             case fetchWithDataState
             case fetchAndSave
             case postAndRefresh
+            case linearWidgetsIntoLines
             case listAndDetail
             case pagination
             case simpleValidation
@@ -66,6 +71,7 @@ final class TopViewModel {
                 case .fetchWithDataState: return "Fetch with data state"
                 case .fetchAndSave: return "Fetch and save"
                 case .postAndRefresh: return "Post data and refresh view"
+                case .linearWidgetsIntoLines: return "Linear widgets in lines"
                 case .listAndDetail: return "List and detail"
                 case .pagination: return "Pagination"
                 case .simpleValidation: return "Simple validation"
@@ -78,6 +84,7 @@ final class TopViewModel {
             var isAvailable: Bool {
                 switch self {
                 case .basicFetch, .fetchWithDataState, .fetchAndSave,
+                     .linearWidgetsIntoLines,
                      .oneTimeBilling:
                     return true
                 case .postAndRefresh, .listAndDetail, .pagination,
