@@ -37,6 +37,7 @@
 		8C060CC9265004CA00620288 /* Dignicate_zero1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C060CC8265004CA00620288 /* Dignicate_zero1UITests.swift */; };
 		8C2382672666F6FC001A2CDC /* FetchAndSaveDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2382662666F6FC001A2CDC /* FetchAndSaveDataViewController.xib */; };
 		8C2ED4CF265562B900D3054D /* BasicFetchAPIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2ED4CE265562B900D3054D /* BasicFetchAPIViewController.xib */; };
+		8C5655A1276E309F00A64574 /* BreakableLinearWidgetContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5655A0276E309F00A64574 /* BreakableLinearWidgetContainerView.swift */; };
 		8CAFE3C627534C3800C9EBB4 /* OneTimeBillingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAFE3C527534C3800C9EBB4 /* OneTimeBillingViewController.xib */; };
 		8CC3F281276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CC3F280276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib */; };
 		8CD389422653018300D6F869 /* TopViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD389412653018300D6F869 /* TopViewTableCell.xib */; };
@@ -112,6 +113,7 @@
 		8C060CCA265004CA00620288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C2382662666F6FC001A2CDC /* FetchAndSaveDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchAndSaveDataViewController.xib; sourceTree = "<group>"; };
 		8C2ED4CE265562B900D3054D /* BasicFetchAPIViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicFetchAPIViewController.xib; sourceTree = "<group>"; };
+		8C5655A0276E309F00A64574 /* BreakableLinearWidgetContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakableLinearWidgetContainerView.swift; sourceTree = "<group>"; };
 		8CAFE3C527534C3800C9EBB4 /* OneTimeBillingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneTimeBillingViewController.xib; sourceTree = "<group>"; };
 		8CC3F280276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinearWidgetsInLinesViewController.xib; sourceTree = "<group>"; };
 		8CD389412653018300D6F869 /* TopViewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopViewTableCell.xib; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				855F5E0CF13E20B6D5480315 /* LinearWidgetsInLinesViewController.swift */,
 				8CC3F280276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib */,
+				8C5655A0276E309F00A64574 /* BreakableLinearWidgetContainerView.swift */,
 			);
 			path = 201_LinearWidgets;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				855F54E4F2C23BDF06AFE4D3 /* FetchAndSaveDataViewController.swift in Sources */,
 				855F5AB1BC08C931D137D3FB /* FetchAndSaveDataViewModel.swift in Sources */,
 				E897E831AC66B10271714E3A /* CompanyInfoFetchAndSaveRepositoryMock.swift in Sources */,
+				8C5655A1276E309F00A64574 /* BreakableLinearWidgetContainerView.swift in Sources */,
 				E897E3D303653AA6A379563F /* CompanyInfoDataStoreInMemory.swift in Sources */,
 				855F58744038EF7A38D07662 /* OneTimeBillingViewController.swift in Sources */,
 				855F5D1C92E93F92F04F1E41 /* OneTimeBillingViewModel.swift in Sources */,
