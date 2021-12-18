@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		56A14AB3B53A2E07E2CC4FDE /* Pods_Dignicate_zero1_Dignicate_zero1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DD343CC93620A12127F8E6 /* Pods_Dignicate_zero1_Dignicate_zero1UITests.framework */; };
 		6148F3496EC19301BD849245 /* Pods_Dignicate_zero1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7026D913F9453638EF385579 /* Pods_Dignicate_zero1.framework */; };
+		855F50031FBF331B0B86A24C /* LinearWidgetsInLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5E0CF13E20B6D5480315 /* LinearWidgetsInLinesViewController.swift */; };
 		855F51C69772B1C173921698 /* FetchAndSaveDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */; };
 		855F52815C5A95A32868CA79 /* FetchWithDataStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */; };
 		855F5369ACEAF3CD77D2C760 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F55C8653B2AAC2EB6DBC8 /* CompanyInfoFetchAndSaveRepositoryProtocol.swift */; };
@@ -37,6 +38,7 @@
 		8C2382672666F6FC001A2CDC /* FetchAndSaveDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2382662666F6FC001A2CDC /* FetchAndSaveDataViewController.xib */; };
 		8C2ED4CF265562B900D3054D /* BasicFetchAPIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2ED4CE265562B900D3054D /* BasicFetchAPIViewController.xib */; };
 		8CAFE3C627534C3800C9EBB4 /* OneTimeBillingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAFE3C527534C3800C9EBB4 /* OneTimeBillingViewController.xib */; };
+		8CC3F281276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CC3F280276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib */; };
 		8CD389422653018300D6F869 /* TopViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD389412653018300D6F869 /* TopViewTableCell.xib */; };
 		8CDD7D2426563BDD00F9B503 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CDD7D2326563BDD00F9B503 /* Colors.xcassets */; };
 		DBF1486429FED1EC6FEA82B2 /* Pods_Dignicate_zero1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C823DF5268C10002526D362 /* Pods_Dignicate_zero1Tests.framework */; };
@@ -93,6 +95,7 @@
 		855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewModel.swift; sourceTree = "<group>"; };
 		855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryMock.swift; sourceTree = "<group>"; };
 		855F5CB552D3BDABD6687377 /* FetchAndSaveDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataViewController.swift; sourceTree = "<group>"; };
+		855F5E0CF13E20B6D5480315 /* LinearWidgetsInLinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearWidgetsInLinesViewController.swift; sourceTree = "<group>"; };
 		8C060CA3265004C900620288 /* Dignicate.zero1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dignicate.zero1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C060CA6265004C900620288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C060CA8265004C900620288 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		8C2382662666F6FC001A2CDC /* FetchAndSaveDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchAndSaveDataViewController.xib; sourceTree = "<group>"; };
 		8C2ED4CE265562B900D3054D /* BasicFetchAPIViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicFetchAPIViewController.xib; sourceTree = "<group>"; };
 		8CAFE3C527534C3800C9EBB4 /* OneTimeBillingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneTimeBillingViewController.xib; sourceTree = "<group>"; };
+		8CC3F280276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinearWidgetsInLinesViewController.xib; sourceTree = "<group>"; };
 		8CD389412653018300D6F869 /* TopViewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopViewTableCell.xib; sourceTree = "<group>"; };
 		8CDD7D2326563BDD00F9B503 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B38B81D7EDF255A6775AD05C /* Pods-Dignicate.zero1-Dignicate.zero1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dignicate.zero1-Dignicate.zero1UITests.release.xcconfig"; path = "Target Support Files/Pods-Dignicate.zero1-Dignicate.zero1UITests/Pods-Dignicate.zero1-Dignicate.zero1UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +165,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		855F50BCAEA11E2E25F048CB /* 201_LinearWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				855F5E0CF13E20B6D5480315 /* LinearWidgetsInLinesViewController.swift */,
+				8CC3F280276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib */,
+			);
+			path = 201_LinearWidgets;
+			sourceTree = "<group>";
+		};
 		855F5320D4525E163E4B921F /* 01_Basic */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +193,14 @@
 				855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */,
 			);
 			path = 103_FetchAndSaveData;
+			sourceTree = "<group>";
+		};
+		855F5403B5BCFCD0203C5BBF /* 02_Layout */ = {
+			isa = PBXGroup;
+			children = (
+				855F50BCAEA11E2E25F048CB /* 201_LinearWidgets */,
+			);
+			path = 02_Layout;
 			sourceTree = "<group>";
 		};
 		855F5782F35CFB57010002AC /* 103_FetchAndSaveData */ = {
@@ -327,6 +348,7 @@
 				E897E0FC7E4F0A02CBD9EC85 /* 01_Basic */,
 				855F5F5C88F75903677FB796 /* 04_IAP */,
 				8CE9ABFB26513B930075CF5F /* Top */,
+				855F5403B5BCFCD0203C5BBF /* 02_Layout */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC3F281276DA4FC0029CC93 /* LinearWidgetsInLinesViewController.xib in Resources */,
 				8C2382672666F6FC001A2CDC /* FetchAndSaveDataViewController.xib in Resources */,
 				8CAFE3C627534C3800C9EBB4 /* OneTimeBillingViewController.xib in Resources */,
 				8C060CB3265004CA00620288 /* LaunchScreen.storyboard in Resources */,
@@ -716,6 +739,7 @@
 				855F56DE7A8DFCB210AA3356 /* OneTimeBillingUseCase.swift in Sources */,
 				855F550E2BA72385F4464BAB /* OneTimeBillingRepositoryProtocol.swift in Sources */,
 				855F56EA45AC3F19EB26DDA6 /* OneTimeBillingRepository.swift in Sources */,
+				855F50031FBF331B0B86A24C /* LinearWidgetsInLinesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
