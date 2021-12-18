@@ -6,7 +6,14 @@ import UIKit
 
 final class LinearWidgetsInLinesViewController: UIViewController {
 
-    init() {
+    enum Event {
+        case didTapCloseButton
+    }
+
+    private let eventHandler: (Event) -> Void
+
+    init(eventHandler: @escaping (Event) -> Void) {
+        self.eventHandler = eventHandler
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -17,5 +24,11 @@ final class LinearWidgetsInLinesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(didTapCloseButton))
+        navigationItem.leftBarButtonItems = [closeButton]
+    }
+
+    @objc private func didTapCloseButton() {
+        eventHandler(.didTapCloseButton)
     }
 }

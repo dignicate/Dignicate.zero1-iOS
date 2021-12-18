@@ -70,19 +70,16 @@ extension TopViewController: UITableViewDelegate {
             // TODO:
             break
         case .linearWidgetsIntoLines:
-            let viewController = LinearWidgetsInLinesViewController()
+            let viewController = LinearWidgetsInLinesViewController(
+                eventHandler: { [weak self] event in
+                    self?.dismiss(animated: true)
+                }
+            )
             let navi = UINavigationController(rootViewController: viewController)
             navi.modalPresentationStyle = .overFullScreen
-            let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(dismissMe))
-            navi.navigationItem.leftBarButtonItems = [closeButton]
-
             present(navi, animated: true)
         case .oneTimeBilling:
             navigationController?.pushViewController(OneTimeBillingViewController(), animated: true)
         }
-    }
-
-    @objc private func dismissMe() {
-        dismiss(animated: true)
     }
 }
