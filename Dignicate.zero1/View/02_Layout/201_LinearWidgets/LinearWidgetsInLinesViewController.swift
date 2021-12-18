@@ -6,14 +6,7 @@ import UIKit
 
 final class LinearWidgetsInLinesViewController: UIViewController {
 
-    enum Event {
-        case didTapBackButton
-    }
-
-    private let eventHandler: (Event) -> Void
-
-    init(eventHandler: @escaping (Event) -> Void) {
-        self.eventHandler = eventHandler
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -23,22 +16,6 @@ final class LinearWidgetsInLinesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
-    }
 
-    private func setupNavigation() {
-        let backButton: UIBarButtonItem = {
-            let object = UIBarButtonItem(
-                title: "",
-                style: .plain,
-                target: nil,
-                action: #selector(self.didTapButtonButton))
-            return object
-        }()
-        navigationItem.backBarButtonItem = backButton
-    }
-
-    @objc private func didTapButtonButton(_ sender: AnyObject) {
-        eventHandler(.didTapBackButton)
     }
 }
