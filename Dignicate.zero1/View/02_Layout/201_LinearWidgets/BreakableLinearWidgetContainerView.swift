@@ -7,11 +7,11 @@ import SwiftUI
 
 struct BreakableLinearWidgetContainerView: View {
 
-    fileprivate let tags: [String]
+    let tags: [String]
 
     var body: some View {
         GeometryReader { geometry in
-            self.generateContent(in: geometry)
+            generateContent(in: geometry)
         }
     }
 

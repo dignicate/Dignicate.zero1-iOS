@@ -6,6 +6,8 @@ import UIKit
 
 final class LinearWidgetsInLinesViewController: UIViewController {
 
+    @IBOutlet private weak var widgetContainerViewHost: UIView!
+
     enum Event {
         case didTapCloseButton
     }
@@ -23,7 +25,18 @@ final class LinearWidgetsInLinesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        setupNavigation()
+    }
 
+    private func setupUI() {
+         BreakableLinearWidgetContainerView(
+            tags: ["古典", "経済学", "宇宙物理学", "世界史", "シンギュラリティー", "80億年後の地球",  "ソマリア", "どうぶつの森", "ローマ帝国"]
+        )
+        .snap(to: widgetContainerViewHost)
+    }
+
+    private func setupNavigation() {
         let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(didTapCloseButton))
         navigationItem.leftBarButtonItems = [closeButton]
     }

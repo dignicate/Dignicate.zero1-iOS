@@ -20,7 +20,9 @@
 		855F56DE7A8DFCB210AA3356 /* OneTimeBillingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F53FDE600EC4CC5CCD7E8 /* OneTimeBillingUseCase.swift */; };
 		855F56EA45AC3F19EB26DDA6 /* OneTimeBillingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F539778A51FD919D62A14 /* OneTimeBillingRepository.swift */; };
 		855F56FD3EC7B94A5D7FE593 /* SimpleCompanyInfoRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */; };
+		855F57C0515A14C11BB65054 /* SwiftUI+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5957B7F88792A2E8816C /* SwiftUI+Extensions.swift */; };
 		855F58744038EF7A38D07662 /* OneTimeBillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F53758201774B799D98A8 /* OneTimeBillingViewController.swift */; };
+		855F58F88667D9C6627ACDAB /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5C98A3B052D4BBDD14DB /* UIView+Extensions.swift */; };
 		855F5A6027396628911592D1 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F52470919915DBE44CB22 /* CompanyInfo.swift */; };
 		855F5AA9C990E65442556757 /* SimpleCompanyInfoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F55A1B72DEDE3487FD03D /* SimpleCompanyInfoRepositoryProtocol.swift */; };
 		855F5AB1BC08C931D137D3FB /* FetchAndSaveDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F5AA5B6B46F8AE88618BD /* FetchAndSaveDataViewModel.swift */; };
@@ -89,12 +91,14 @@
 		855F576707A2DFB33B9BE7DA /* FetchWithDataStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewController.swift; sourceTree = "<group>"; };
 		855F5771619D0DF7700CD713 /* OneTimeBillingRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingRepositoryProtocol.swift; sourceTree = "<group>"; };
 		855F5946DDD00CDFD6A47FAF /* OneTimeBillingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTimeBillingViewModel.swift; sourceTree = "<group>"; };
+		855F5957B7F88792A2E8816C /* SwiftUI+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Extensions.swift"; sourceTree = "<group>"; };
 		855F596B339E7ECDEA781F16 /* FetchAndSaveDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataUseCase.swift; sourceTree = "<group>"; };
 		855F59D2179745D86ECF38E4 /* BasicFetchAPIUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicFetchAPIUseCase.swift; sourceTree = "<group>"; };
 		855F5AA5B6B46F8AE88618BD /* FetchAndSaveDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataViewModel.swift; sourceTree = "<group>"; };
 		855F5AAAA4D80B18F7BC88AB /* FetchWithDataStateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchWithDataStateViewController.xib; sourceTree = "<group>"; };
 		855F5AF8901DFDEDCBC07B7E /* FetchWithDataStateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchWithDataStateViewModel.swift; sourceTree = "<group>"; };
 		855F5B4BDC383AD761743957 /* SimpleCompanyInfoRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCompanyInfoRepositoryMock.swift; sourceTree = "<group>"; };
+		855F5C98A3B052D4BBDD14DB /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		855F5CB552D3BDABD6687377 /* FetchAndSaveDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAndSaveDataViewController.swift; sourceTree = "<group>"; };
 		855F5E0CF13E20B6D5480315 /* LinearWidgetsInLinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearWidgetsInLinesViewController.swift; sourceTree = "<group>"; };
 		8C060CA3265004C900620288 /* Dignicate.zero1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dignicate.zero1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +228,15 @@
 			path = 04_IAP;
 			sourceTree = "<group>";
 		};
+		855F59B5E6C914BAEC4D2DA4 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				855F5C98A3B052D4BBDD14DB /* UIView+Extensions.swift */,
+				855F5957B7F88792A2E8816C /* SwiftUI+Extensions.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		855F5AAA353D41BAF38C15CC /* 102_FetchWithDataState */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +336,7 @@
 				8C060CB1265004CA00620288 /* LaunchScreen.storyboard */,
 				8C060CB4265004CA00620288 /* Info.plist */,
 				E897E2D62ECBD60B61401F9B /* Resources.swift */,
+				855F59B5E6C914BAEC4D2DA4 /* Utility */,
 			);
 			path = Dignicate.zero1;
 			sourceTree = "<group>";
@@ -349,9 +363,9 @@
 			isa = PBXGroup;
 			children = (
 				E897E0FC7E4F0A02CBD9EC85 /* 01_Basic */,
+				855F5403B5BCFCD0203C5BBF /* 02_Layout */,
 				855F5F5C88F75903677FB796 /* 04_IAP */,
 				8CE9ABFB26513B930075CF5F /* Top */,
-				855F5403B5BCFCD0203C5BBF /* 02_Layout */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -744,6 +758,8 @@
 				855F550E2BA72385F4464BAB /* OneTimeBillingRepositoryProtocol.swift in Sources */,
 				855F56EA45AC3F19EB26DDA6 /* OneTimeBillingRepository.swift in Sources */,
 				855F50031FBF331B0B86A24C /* LinearWidgetsInLinesViewController.swift in Sources */,
+				855F58F88667D9C6627ACDAB /* UIView+Extensions.swift in Sources */,
+				855F57C0515A14C11BB65054 /* SwiftUI+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
